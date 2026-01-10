@@ -1,32 +1,34 @@
 import logo from "../assets/logo.png";
 import hero1 from "../assets/hero1.png";
+import { ShoppingCart } from "lucide-react";
 
 function Hero() {
   return (
     <section>
-      <div className="">
+      <div className="overflow-hidden">
         <nav className="cont w-full h-[80px] flex items-center justify-around bg-transparent backdrop-blur-sm">
           <a href="/" className="w-[150px]">
             <img src={logo} alt="" />
           </a>
 
           <ul className="flex gap-5">
-            <li>
+            <li className="hover:text-(--color-secondary)">
               <a href="#about">About</a>
             </li>
-            <li>
+            <li className="hover:text-(--color-secondary)">
               <a href="#services">Services</a>
             </li>
-            <li>
+            <li className="hover:text-(--color-secondary)">
               <a href="/gallery">Gallery</a>
             </li>
-            <li>
+            <li className="hover:text-(--color-secondary)">
               <a href="#contact">Contact</a>
             </li>
           </ul>
 
-          <button className="px-5 py-3 border ">
-            <a href="#contact">Order on WhatsApp </a>
+          <button className="px-5 py-3 border flex gap-2 items-center">
+            <ShoppingCart />
+            <a href="#contact">Order on WhatsApp</a>
           </button>
         </nav>
 
@@ -36,15 +38,6 @@ function Hero() {
               <h1 className="text-[5em] font-[400] absolute left-1/2 -translate-x-1/2 top-5 ">
                 Crafted to Delight, <br /> Served with Love.
               </h1>
-              {/* <p>
-                Tabbie Bakes is a family-run business that specializes in baking
-                fresh, delicious, and healthy cakes and pastries. We use only
-                the finest ingredients and traditional baking techniques to
-                create our signature products, which are available in a variety
-                of flavors and styles. Whether you're looking for a special
-                treat for yourself or a gift for someone you love, Tabbie Bakes
-                has something for everyone.
-              </p> */}
 
               <div className=" absolute bottom-[5em] left-[3em] max-w-[40%] flex flex-col items-start text-start gap-5">
                 <p className="text-[.9em] uppercase font-semibold">
@@ -53,8 +46,8 @@ function Hero() {
                   quality.
                 </p>
 
-                <button className="px-5 py-3 border w-fit bg-black text-white">
-                  <a href="#contact">Order on WhatsApp</a>
+                <button className="px-5 py-3 w-fit bg-black text-white flex gap-2 items-center">
+                  <a href="#contact">Order on WhatsApp</a> <ShoppingCart />
                 </button>
               </div>
             </div>

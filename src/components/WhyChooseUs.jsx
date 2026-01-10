@@ -1,5 +1,6 @@
 import React from "react";
 import { Award, Clock, Heart, Sparkles } from "lucide-react";
+import breadbg from "../assets/breadbg.png";
 
 function WhyChooseUs() {
   const features = [
@@ -29,15 +30,20 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="bg-[#fff]">
+    <section className="bg-[#fff] whychoose">
       <div className="cont w-full h-screen flex justify-around items-center flex-col">
-        <h2>Why Choose Us</h2>
+        <h2 className="text-2xl font-semibold border-solid border px-7 py-3 rounded-full">
+          Why Choose Us
+        </h2>
         <div className="grid grid-cols-4 gap-5 mt-5">
           {features.map((feature, index) => (
-            <div key={index}>
-              <div>{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+            <div
+              key={feature.title}
+              className="flex flex-col gap-2 items-center border p-5 bg-transparent backdrop-blur-2xl"
+            >
+              <div className="text-(--color-secondary)">{feature.icon}</div>
+              <h3 className="font-semibold">{feature.title}</h3>
+              <p className="text-center">{feature.description}</p>
             </div>
           ))}
         </div>
