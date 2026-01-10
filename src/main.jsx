@@ -3,11 +3,17 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-
+import Gallery from "./components/Gallery";
+import Error from "./components/Error";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/gallery",
+    element: <Gallery />,
   },
 ]);
 
