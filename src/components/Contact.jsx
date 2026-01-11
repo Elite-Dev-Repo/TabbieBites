@@ -3,18 +3,20 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <footer className="bg-black h-[35vh] w-[100vw] text-[#fff7] overflow-hidden">
-      <div className="cont flex items-start flex-col w-full h-full">
-        <div className="flex flex-col  mt-9 h-full w-full justify-center gap-4">
-          <p>oyenekandorcas@gmail.com</p>
-          <p>+234 9167686804</p>
+    <footer className="bg-black min-h-[35vh] w-full text-[#fff7] overflow-hidden">
+      <div className="cont flex flex-col w-full h-full px-4 sm:px-5">
+        <div className="flex flex-col mt-6 sm:mt-9 h-full w-full justify-center gap-3 sm:gap-4 py-8">
+          <p className="text-sm sm:text-base break-all">
+            oyenekandorcas@gmail.com
+          </p>
+          <p className="text-sm sm:text-base">+234 9167686804</p>
         </div>
-        <div className="flex items-center h-full w-full my-9 items-end justify-center gap-9">
-          <p>
+        <div className="flex flex-col sm:flex-row items-center h-full w-full my-6 sm:my-9 justify-center gap-4 sm:gap-9 pb-6">
+          <p className="text-sm sm:text-base">
             <a href="#">Back to top</a>
           </p>
 
-          <p className="text-center flex items-center justify-center text-[#fff7]">
+          <p className="text-center flex items-center justify-center text-[#fff7] text-xs sm:text-base">
             © {new Date().getFullYear()} Elite Developer. All rights reserved.
           </p>
         </div>
