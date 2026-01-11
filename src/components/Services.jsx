@@ -43,9 +43,9 @@ const Services = () => {
     <section className="max-w-6xl mx-auto px-4 py-16 font-sans text-gray-800">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold border-solid border px-7 py-3 rounded-full w-fit mx-auto mb-5">
           Our Services
-        </h1>
+        </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
           From intimate morning coffees to life’s biggest celebrations, we bring
           the warmth of a professional kitchen directly to your table.
@@ -57,7 +57,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow"
+            className="p-8 border border-gray-100 rounded-2xl bg-stone-50 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="mb-4">{service.icon}</div>
             <h3 className="text-xl font-bold mb-3">{service.title}</h3>
@@ -132,7 +132,7 @@ const Services = () => {
       </div>
 
       {/* Quality Note & CTA */}
-      <div className="text-center bg-(--color-secondary) rounded-2xl p-10">
+      <div className="text-center bg-black rounded-2xl p-10">
         <p className="italic text-[#ffffff98] mb-6 text-lg">
           "We believe the best flavor comes from real butter, local eggs, and a
           lot of patience."

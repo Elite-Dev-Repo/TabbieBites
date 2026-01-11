@@ -49,12 +49,7 @@ section {
 }
 
 .whychoose {
-  background-image: url(../src/assets/breadbg.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  @apply bg-transparent;
-  background-attachment: fixed;
+  @apply bg-stone-50;
 }
 
 .img-cont {

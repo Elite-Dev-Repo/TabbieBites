@@ -66,7 +66,7 @@ function Gallery() {
 
   return (
     <body>
-      <section className="py-12 bg-white min-h-screen">
+      <section className="py-12  min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-center mb-12 text-gray-800">
             Our Past Works

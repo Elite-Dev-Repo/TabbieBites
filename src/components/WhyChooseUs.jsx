@@ -31,7 +31,7 @@ function WhyChooseUs() {
 
   return (
     <section className="bg-[#fff] whychoose">
-      <div className="cont w-full h-screen flex justify-around items-center flex-col">
+      <div className="cont w-full h-screen flex justify-center gap-[4em] items-center flex-col">
         <h2 className="text-2xl font-semibold border-solid border px-7 py-3 rounded-full">
           Why Choose Us
         </h2>
@@ -39,7 +39,7 @@ function WhyChooseUs() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="flex flex-col gap-2 items-center border p-5 bg-transparent backdrop-blur-2xl"
+              className="flex flex-col gap-2 items-center border p-5 bg-transparent backdrop-blur-[60em]"
             >
               <div className="text-(--color-secondary)">{feature.icon}</div>
               <h3 className="font-semibold">{feature.title}</h3>

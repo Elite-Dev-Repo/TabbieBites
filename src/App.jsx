@@ -13,8 +13,8 @@ const App = () => {
       <WhyChooseUs />
       <About />
       <Services />
-      <Contact />
       <MiniGallery />
+      <Contact />
     </>
   );
 };

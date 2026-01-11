@@ -13,7 +13,7 @@ function Hero() {
 
           <ul className="flex gap-5">
             <li className="hover:text-(--color-secondary)">
-              <a href="#about">About</a>
+              <a href="#about">Our Story</a>
             </li>
             <li className="hover:text-(--color-secondary)">
               <a href="#services">Services</a>
