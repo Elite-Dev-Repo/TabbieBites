@@ -40,7 +40,9 @@ function Hero() {
 
           <button className="hidden lg:flex px-5 py-3 border gap-2 items-center">
             <ShoppingCart />
-            <a href="#contact">Order on WhatsApp</a>
+            <a href="https://wa.me/c/2348078391732" target="_blank">
+              Order on WhatsApp
+            </a>
           </button>
 
           {/* Mobile menu */}
@@ -92,7 +94,10 @@ function Hero() {
                 </p>
 
                 <button className="px-5 py-3 w-fit bg-black text-white flex gap-2 items-center">
-                  <a href="#contact">Order on WhatsApp</a> <ShoppingCart />
+                  <a href="https://wa.me/c/2348078391732" target="_blank">
+                    View Catalogue
+                  </a>{" "}
+                  <ShoppingCart />
                 </button>
               </div>
             </div>

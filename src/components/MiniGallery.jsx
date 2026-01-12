@@ -9,6 +9,7 @@ import image10 from "../assets/image (10).jpg";
 
 import image16 from "../assets/image (16).jpg";
 import image17 from "../assets/image17.jpg";
+import { motion } from "framer-motion";
 
 function MiniGallery() {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -37,7 +38,13 @@ function MiniGallery() {
   return (
     <body>
       <section className="py-12  min-h-screen">
-        <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 500, x: 200 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          viewport={{ once: true }} // Only animate once
+          transition={{ duration: 0.4 }}
+          className="max-w-7xl mx-auto px-4"
+        >
           <h2 className="text-2xl font-semibold border-solid border w-fit mx-auto mb-9 px-7 py-3 rounded-full">
             Our Past Works
           </h2>
@@ -72,7 +79,7 @@ function MiniGallery() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         <div className=" p-5">
           <a

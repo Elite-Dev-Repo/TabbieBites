@@ -1,11 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import tabbie from "../assets/tabbie.jpg";
 
 const About = () => {
   return (
     <section className="overflow-hidden">
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 500, x: 200 }}
+        whileInView={{ opacity: 1, y: 0, x: 0 }}
+        viewport={{ once: true }} // Only animate once
+        transition={{ duration: 0.4 }}
         className="cont py-8 sm:py-12 lg:py-5 flex flex-col lg:flex-row gap-8 lg:gap-5 min-h-screen justify-center items-center overflow-hidden"
         id="about"
       >
@@ -37,7 +42,7 @@ const About = () => {
             Tabbie Bites.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

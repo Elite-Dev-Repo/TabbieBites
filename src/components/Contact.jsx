@@ -6,10 +6,13 @@ const Contact = () => {
     <footer className="bg-black min-h-[35vh] w-full text-[#fff7] overflow-hidden">
       <div className="cont flex flex-col w-full h-full px-4 sm:px-5">
         <div className="flex flex-col mt-6 sm:mt-9 h-full w-full justify-center gap-3 sm:gap-4 py-8">
-          <p className="text-sm sm:text-base break-all">
+          <p className="text-sm sm:text-base break-all flex items-center gap-2">
+            <MessageCircleCodeIcon className="text-white" />{" "}
             oyenekandorcas@gmail.com
           </p>
-          <p className="text-sm sm:text-base">+234 9167686804</p>
+          <p className="text-sm sm:text-base flex items-center gap-2">
+            <PhoneCall className="text-white" /> +2348078391732
+          </p>
         </div>
         <div className="flex flex-col sm:flex-row items-center h-full w-full my-6 sm:my-9 justify-center gap-4 sm:gap-9 pb-6">
           <p className="text-sm sm:text-base">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Cake, Utensils, Briefcase, CalendarCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -82,7 +83,13 @@ const Services = () => {
       </div>
 
       {/* Process Table Section */}
-      <div className="bg-stone-50 rounded-3xl p-6 sm:p-8 md:p-12 mb-12 sm:mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: -500, x: -200 }}
+        whileInView={{ opacity: 1, y: 0, x: 0 }}
+        viewport={{ once: true }} // Only animate once
+        transition={{ duration: 0.4 }}
+        className="bg-stone-50 rounded-3xl p-6 sm:p-8 md:p-12 mb-12 sm:mb-20"
+      >
         <div className="flex items-center gap-3 mb-6 sm:mb-8">
           <CalendarCheck className="text-gray-900 w-6 h-6 sm:w-8 sm:h-8" />
           <h2 className="text-2xl sm:text-3xl font-serif font-bold">
@@ -144,7 +151,7 @@ const Services = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </motion.div>
 
       {/* Quality Note & CTA */}
       <div className="text-center bg-black rounded-2xl p-8 sm:p-10">

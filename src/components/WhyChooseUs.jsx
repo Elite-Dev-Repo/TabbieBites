@@ -1,6 +1,7 @@
 import React from "react";
 import { Award, Clock, Heart, Sparkles } from "lucide-react";
 import breadbg from "../assets/breadbg.png";
+import { motion } from "framer-motion";
 
 function WhyChooseUs() {
   const features = [
@@ -31,7 +32,13 @@ function WhyChooseUs() {
 
   return (
     <section className="bg-[#fff] whychoose">
-      <div className="cont w-full min-h-screen py-12 lg:py-0 lg:h-screen flex justify-center gap-[2em] lg:gap-[4em] items-center flex-col">
+      <motion.div
+        initial={{ opacity: 0, y: 500, x: 200 }}
+        whileInView={{ opacity: 1, y: 0, x: 0 }}
+        viewport={{ once: true }} // Only animate once
+        transition={{ duration: 0.4 }}
+        className="cont w-full min-h-screen py-12 lg:py-0 lg:h-screen flex justify-center gap-[2em] lg:gap-[4em] items-center flex-col"
+      >
         <h2 className="text-xl sm:text-2xl font-semibold border-solid border px-5 sm:px-7 py-3 rounded-full text-center">
           Why Choose Us
         </h2>
@@ -49,7 +56,7 @@ function WhyChooseUs() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
