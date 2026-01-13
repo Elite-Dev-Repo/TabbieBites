@@ -38,13 +38,7 @@ function MiniGallery() {
   return (
     <body>
       <section className="py-12  min-h-screen">
-        <motion.div
-          initial={{ opacity: 0, y: 500, x: 200 }}
-          whileInView={{ opacity: 1, y: 0, x: 0 }}
-          viewport={{ once: true }} // Only animate once
-          transition={{ duration: 0.4 }}
-          className="max-w-7xl mx-auto px-4"
-        >
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl font-semibold border-solid border w-fit mx-auto mb-9 px-7 py-3 rounded-full">
             Our Past Works
           </h2>
@@ -79,7 +73,7 @@ function MiniGallery() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         <div className=" p-5">
           <a

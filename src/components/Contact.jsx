@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="flex flex-col mt-6 sm:mt-9 h-full w-full justify-center gap-3 sm:gap-4 py-8">
           <p className="text-sm sm:text-base break-all flex items-center gap-2">
             <MessageCircleCodeIcon className="text-white" />{" "}
-            oyenekandorcas@gmail.com
+            dorcasoyenekan3@gmail.com
           </p>
           <p className="text-sm sm:text-base flex items-center gap-2">
             <PhoneCall className="text-white" /> +2348078391732
