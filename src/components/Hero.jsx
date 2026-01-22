@@ -34,7 +34,7 @@ function Hero() {
               <a href="/gallery">Gallery</a>
             </li>
             <li className="hover:text-(--color-secondary)">
-              <a href="#contact">Contact</a>
+              <a href="pricing">Pricing</a>
             </li>
           </ul>
 

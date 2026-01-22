@@ -9,7 +9,6 @@ import image10 from "../assets/image (10).jpg";
 
 import image16 from "../assets/image (16).jpg";
 import image17 from "../assets/image17.jpg";
-import { motion } from "framer-motion";
 
 function MiniGallery() {
   const [selectedImg, setSelectedImg] = useState(null);

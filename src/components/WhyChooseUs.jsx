@@ -1,7 +1,5 @@
 import React from "react";
 import { Award, Clock, Heart, Sparkles } from "lucide-react";
-import breadbg from "../assets/breadbg.png";
-import { motion } from "framer-motion";
 
 function WhyChooseUs() {
   const features = [
@@ -32,18 +30,12 @@ function WhyChooseUs() {
 
   return (
     <section className="bg-[#fff] whychoose">
-      <motion.div
-        initial={{ opacity: 0, y: 500, x: 200 }}
-        whileInView={{ opacity: 1, y: 0, x: 0 }}
-        viewport={{ once: true }} // Only animate once
-        transition={{ duration: 0.4 }}
-        className="cont w-full min-h-screen py-12 lg:py-0 lg:h-screen flex justify-center gap-[2em] lg:gap-[4em] items-center flex-col"
-      >
+      <div className="cont w-full min-h-screen py-12 lg:py-0 lg:h-screen flex justify-center gap-[2em] lg:gap-[4em] items-center flex-col">
         <h2 className="text-xl sm:text-2xl font-semibold border-solid border px-5 sm:px-7 py-3 rounded-full text-center">
           Why Choose Us
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 w-full max-w-7xl px-4">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
               className="flex flex-col gap-2 items-center border p-5 bg-transparent backdrop-blur-[60em]"
@@ -56,7 +48,7 @@ function WhyChooseUs() {
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

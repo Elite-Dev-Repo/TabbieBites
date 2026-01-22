@@ -1,16 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 import tabbie from "../assets/tabbie.jpg";
 
 const About = () => {
   return (
     <section className="overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 500, x: 200 }}
-        whileInView={{ opacity: 1, y: 0, x: 0 }}
-        viewport={{ once: true }} // Only animate once
-        transition={{ duration: 0.4 }}
+      <div
         className="cont py-8 sm:py-12 lg:py-5 flex flex-col lg:flex-row gap-8 lg:gap-5 min-h-screen justify-center items-center overflow-hidden"
         id="about"
       >
@@ -26,7 +21,7 @@ const About = () => {
             Our Story
           </h3>
           <p className="text-sm sm:text-base lg:text-[1em] leading-relaxed sm:leading-[1.8em] lg:leading-[2em] tracking-wide text-center">
-            At Tabbie Bites, baking isn’t just a business—it’s our family’s love
+            At Tabbie Bakes, baking isn’t just a business—it’s our family’s love
             language. As a family-run bakery, we believe that the best memories
             are made around the table, which is why we pour our hearts into
             crafting fresh, wholesome cakes and pastries that taste like home.{" "}
@@ -39,10 +34,10 @@ const About = () => {
             flavors designed to satisfy every palate. Whether you are indulging
             in a quiet moment of self-care or searching for a hand-crafted gift
             to brighten someone’s day, you’ll find something truly special at
-            Tabbie Bites.
+            Tabbie Bakes.
           </p>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

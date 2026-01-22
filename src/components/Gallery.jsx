@@ -16,6 +16,7 @@ import image14 from "../assets/image (14).jpg";
 import image15 from "../assets/image (15).jpg";
 import image16 from "../assets/image (16).jpg";
 import image17 from "../assets/image17.jpg";
+import { MoveLeft } from "lucide-react";
 
 function Gallery() {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -67,6 +68,9 @@ function Gallery() {
   return (
     <body>
       <section className="py-12  min-h-screen">
+        <a href="/" className="flex items-center gap-2">
+        <MoveLeft />  Back to Home 
+        </a>
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-center mb-12 text-gray-800">
             Our Past Works

@@ -5,11 +5,16 @@ import "./index.css";
 import App from "./App.jsx";
 import Gallery from "./components/Gallery";
 import Error from "./components/Error";
+import Pricing from "./components/Pricing";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <Error />,
+  },
+  {
+    path: "/pricing",
+    element: <Pricing />,
   },
   {
     path: "/gallery",
@@ -20,5 +25,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
