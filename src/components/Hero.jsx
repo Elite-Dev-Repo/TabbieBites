@@ -69,6 +69,11 @@ function Hero() {
                     Contact
                   </a>
                 </li>
+                <li className="hover:text-(--color-secondary)">
+                  <a href="/pricing" onClick={() => setIsMenuOpen(false)}>
+                    Pricing
+                  </a>
+                </li>
                 <li>
                   <button className="w-full px-5 py-3 border flex gap-2 items-center justify-center">
                     <ShoppingCart />
