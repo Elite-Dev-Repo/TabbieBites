@@ -16,9 +16,11 @@ import image14 from "../assets/image (14).jpg";
 import image15 from "../assets/image (15).jpg";
 import image16 from "../assets/image (16).jpg";
 import image17 from "../assets/image17.jpg";
-import { MoveLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Gallery() {
+  const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState(null);
 
   const imagelist = [
@@ -68,9 +70,22 @@ function Gallery() {
   return (
     <body>
       <section className="py-12  min-h-screen">
-        <a href="/" className="flex items-center gap-2">
-        <MoveLeft />  Back to Home 
-        </a>
+        <div className="sticky top-20 z-10 bg-primary/80 backdrop-blur-md border-b border-gray-100">
+          <div className="cont py-4 flex items-center justify-between">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"
+            >
+              <ArrowLeft size={18} className="group-hover:text-primary" />
+              <span className="uppercase tracking-widest text-[10px]">
+                Go Back
+              </span>
+            </button>
+            <span className="text-[10px] uppercase tracking-[0.2em] opacity-40">
+              {imagelist.length} Curated Pieces
+            </span>
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-center mb-12 text-gray-800">
             Our Past Works
