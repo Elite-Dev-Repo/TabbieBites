@@ -1,6 +1,9 @@
-import { MoveLeft } from "lucide-react";
+import { MoveLeft, ArrowLeft } from "lucide-react";
+import Nav from "./Nav";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
+  const navigate = useNavigate();
   const cakeSizes = [
     { size: '6"', prices: ["18k", "30k", "40k", "50k"] },
     { size: '7"', prices: ["22k", "35k", "50k", "65k"] },
@@ -10,12 +13,20 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-16 font-['Quicksand'] bg-[var(--color-primary)]">
+    <section className=" font-['Quicksand'] bg-[var(--color-primary)]">
+      <Nav />{" "}
       <div className="cont">
-        <a href="/" className="flex items-center gap-2">
-          {" "}
-          <MoveLeft /> Back to Home{" "}
-        </a>
+        <div className="cont py-4 flex items-center justify-between">
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"
+          >
+            <ArrowLeft size={18} className="group-hover:text-primary" />
+            <span className="uppercase tracking-widest text-[10px]">
+              Go Back
+            </span>
+          </button>
+        </div>
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-2 tracking-tight text-[var(--color-secondary)]">

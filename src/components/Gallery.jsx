@@ -19,6 +19,8 @@ import image17 from "../assets/image17.jpg";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+import Nav from "./Nav";
+
 function Gallery() {
   const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState(null);
@@ -69,7 +71,8 @@ function Gallery() {
 
   return (
     <body>
-      <section className="py-12  min-h-screen">
+      <section className="  min-h-screen">
+        <Nav></Nav>
         <div className="sticky top-20 z-10 bg-primary/80 backdrop-blur-md border-b border-gray-100">
           <div className="cont py-4 flex items-center justify-between">
             <button
@@ -81,7 +84,7 @@ function Gallery() {
                 Go Back
               </span>
             </button>
-            <span className="text-[10px] uppercase tracking-[0.2em] opacity-40">
+            <span className="text-[10px] uppercase tracking-[0.2em]">
               {imagelist.length} Curated Pieces
             </span>
           </div>
@@ -103,6 +106,7 @@ function Gallery() {
                   src={item.image}
                   alt={item.description}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
 
                 {/* Hover Overlay */}

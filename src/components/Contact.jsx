@@ -3,7 +3,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <footer className="bg-black min-h-[35vh] w-full text-[#fff7] overflow-hidden">
+    <footer className="bg-[var(--color-secondary)] min-h-[35vh] w-full text-[var(--color-primary)] overflow-hidden">
       <div className="cont flex flex-col w-full h-full px-4 sm:px-5">
         <div className="flex flex-col mt-6 sm:mt-9 h-full w-full justify-center gap-3 sm:gap-4 py-8">
           <p className="text-sm sm:text-base break-all flex items-center gap-2">
@@ -19,7 +19,7 @@ const Contact = () => {
             <a href="#">Back to top</a>
           </p>
 
-          <p className="text-center flex items-center justify-center text-[#fff7] text-xs sm:text-base">
+          <p className="text-center flex items-center justify-center text-[#ffffff] text-xs sm:text-base">
             © {new Date().getFullYear()} Elite Developer. All rights reserved.
           </p>
         </div>
