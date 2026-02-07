@@ -1,5 +1,6 @@
 import React from "react";
 import { Cake, Utensils, Briefcase, CalendarCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -40,16 +41,26 @@ const Services = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12 sm:py-16 font-sans text-gray-800">
+    <section className="page-section max-w-6xl mx-auto px-4 py-12 sm:py-16 font-sans text-gray-800">
       {/* Header Section */}
       <div className="text-center mb-12 sm:mb-16">
-        <h2 className="text-xl sm:text-2xl font-semibold border-solid border px-5 sm:px-7 py-3 rounded-full w-fit mx-auto mb-5">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-xl sm:text-2xl font-semibold  px-5 sm:px-7 py-3 rounded-full w-fit mx-auto mb-5"
+        >
           Our Services
-        </h2>
-        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4"
+        >
           From intimate morning coffees to life's biggest celebrations, we bring
           the warmth of a professional kitchen directly to your table.
-        </p>
+        </motion.p>
       </div>
 
       {/* Services Grid */}
@@ -58,7 +69,10 @@ const Services = () => {
         id="services"
       >
         {services.map((service, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
             key={index}
             className="p-6 sm:p-8 border border-gray-100 rounded-2xl bg-stone-50 shadow-sm hover:shadow-md transition-shadow"
           >
@@ -77,7 +91,7 @@ const Services = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -157,7 +171,7 @@ const Services = () => {
         </h3>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a href="https://wa.me/c/2348078391732" target="_blank">
-            <button className="bg-white px-8 py-3 rounded-full font-medium hover:bg-gray-50 transition-colors w-full sm:w-auto">
+            <button className="bg-white px-8 py-3 rounded-sm font-medium hover:bg-gray-50 transition-colors w-full sm:w-auto">
               Get in touch
             </button>
           </a>

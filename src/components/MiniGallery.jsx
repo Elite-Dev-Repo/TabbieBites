@@ -36,7 +36,7 @@ function MiniGallery() {
 
   return (
     <body>
-      <section className="py-12  min-h-screen">
+      <section className="page-section py-12  min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl font-semibold border-solid border w-fit mx-auto mb-9 px-7 py-3 rounded-full">
             Our Past Works

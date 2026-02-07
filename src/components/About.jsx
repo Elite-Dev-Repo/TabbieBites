@@ -1,22 +1,33 @@
 import React from "react";
 
 import tabbie from "../assets/tabbie.jpg";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="overflow-hidden">
+    <section className="page-section overflow-hidden">
       <div
         className="cont py-8 sm:py-12 lg:py-5 flex flex-col lg:flex-row gap-8 lg:gap-5 min-h-screen justify-center items-center overflow-hidden"
         id="about"
       >
-        <div className="w-full lg:w-[40%] h-[50vh] sm:h-[60vh] lg:h-[80vh]">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:w-[40%] h-[50vh] sm:h-[60vh] lg:h-[80vh]"
+        >
           <img
             src={tabbie}
             className="w-full h-full object-cover object-center rounded-lg lg:rounded-none"
           />
-        </div>
+        </motion.div>
 
-        <div className="w-full lg:w-[40%] flex flex-col justify-around items-center p-4 sm:p-6 lg:p-[1em] h-full">
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:w-[40%] flex flex-col justify-around items-center p-4 sm:p-6 lg:p-[1em] h-full"
+        >
           <h3 className="font-bold text-2xl sm:text-3xl lg:text-[1.5em] text-[var(--color-secondary)] mb-4 lg:mb-0">
             Our Story
           </h3>
@@ -36,7 +47,7 @@ const About = () => {
             to brighten someone’s day, you’ll find something truly special at
             Tabbie Bakes.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

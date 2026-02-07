@@ -71,7 +71,7 @@ function Gallery() {
 
   return (
     <body>
-      <section className="  min-h-screen">
+      <section className="page-section  min-h-screen">
         <Nav></Nav>
         <div className="sticky top-20 z-10 bg-primary/80 backdrop-blur-md border-b border-gray-100">
           <div className="cont py-4 flex items-center justify-between">

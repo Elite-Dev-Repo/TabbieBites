@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Gallery from "./components/Gallery";
 import Error from "./components/Error";
 import Pricing from "./components/Pricing";
+import Shop from "./Shop";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/gallery",
     element: <Gallery />,
+  },
+  {
+    path: "/shop",
+    element: <Shop />,
   },
 ]);
 

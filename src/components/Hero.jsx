@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 function Hero() {
   return (
-    <section className="overflow-hidden">
+    <section className="page-section overflow-hidden">
       <div className="overflow-hidden">
         <Nav />
 
@@ -23,7 +23,7 @@ function Hero() {
 
                 <button className="px-5 py-3 w-fit bg-black text-white flex gap-2 items-center">
                   <a href="https://wa.me/c/2348078391732" target="_blank">
-                    View Catalogue
+                    View Catalog
                   </a>{" "}
                   <ShoppingCart />
                 </button>

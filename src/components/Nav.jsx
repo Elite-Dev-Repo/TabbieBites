@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { ShoppingCart, Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -36,10 +38,10 @@ const Nav = () => {
           </li>
         </ul>
 
-        <button className="hidden lg:flex px-5 py-3 border gap-2 items-center">
+        <button className="hidden lg:flex px-5 py-2 rounded-sm gap-2 items-center bg-[#000] text-[#f2f2f2]">
           <ShoppingCart />
-          <a href="https://wa.me/c/2348078391732" target="_blank">
-            Order on WhatsApp
+          <a href="" onClick={() => navigate("/shop")}>
+            Shop
           </a>
         </button>
 
@@ -73,9 +75,11 @@ const Nav = () => {
                 </a>
               </li>
               <li>
-                <button className="w-full px-5 py-3 border flex gap-2 items-center justify-center">
+                <button className="w-full bg-[#000] text-[#f2f2f2] px-5 py-3 border flex gap-2 items-center justify-center">
                   <ShoppingCart />
-                  <a href="#contact">Order on WhatsApp</a>
+                  <a href="" onClick={() => navigate("/shop")}>
+                    Shop
+                  </a>
                 </button>
               </li>
             </ul>

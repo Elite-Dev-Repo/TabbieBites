@@ -3,7 +3,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 
-import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import MiniGallery from "./components/MiniGallery";
 
 const App = () => {
@@ -14,7 +14,8 @@ const App = () => {
       <About />
       <Services />
       <MiniGallery />
-      <Contact />
+
+      <Footer />
     </>
   );
 };

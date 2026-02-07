@@ -13,7 +13,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className=" font-['Quicksand'] bg-[var(--color-primary)]">
+    <section className=" page-section font-['Quicksand'] bg-[var(--color-primary)]">
       <Nav />{" "}
       <div className="cont">
         <div className="cont py-4 flex items-center justify-between">
