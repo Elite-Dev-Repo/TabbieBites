@@ -7,12 +7,15 @@ import { Toaster, toast } from "sonner";
 
 // Asset Imports
 import image1 from "./assets/image (1).jpg";
-import image2 from "./assets/image (2).jpg";
+import image21 from "./assets/image (21).jpeg";
 import image3 from "./assets/image (3).jpg";
 import image4 from "./assets/image (4).jpg";
 import image5 from "./assets/image (5).jpg";
 import image6 from "./assets/image (6).jpg";
-
+import image12 from "./assets/image (12).jpg";
+import image15 from "./assets/image (15).jpg";
+import image16 from "./assets/image (16).jpg";
+import image11 from "./assets/image (11).jpg";
 const ProductCard = ({ product }) => {
   const [isAdded, setIsAdded] = useState(false);
 
@@ -77,12 +80,53 @@ const Shop = () => {
   const navigate = useNavigate();
 
   const products = [
-    { id: 1, name: "Naked Bento Cake", price: 39999, img: image5 },
-    { id: 2, name: "Traditional Wedding Cake", price: 25000, img: image6 },
-    { id: 3, name: "Bento Birthday Cake", price: 25000, img: image4 },
-    { id: 4, name: "Kids Birthday Cake", price: 35000, img: image3 },
-    { id: 5, name: "PanCakes", price: 30000, img: image2 },
-    { id: 6, name: "Small Chops", price: 27500, img: image1 },
+    { id: 2, name: "Traditional Wedding Cake", price: 200000, img: image6 },
+
+    {
+      id: 4,
+      name: "Classy white Vintage Cake",
+      price: 65000,
+      img: image3,
+    },
+    { id: 1, name: "Naked Bento Cake", price: 4000, img: image5 },
+    { id: 5, name: "50th Birthday Cake", price: 20000, img: image21 },
+
+    {
+      id: 6,
+      name: "Small Chops with Peppered Chicken",
+      price: 2500,
+      img: image1,
+    },
+    {
+      id: 12,
+      name: "Big Jar - Crunchy Milky Chinchin",
+      price: 27500,
+      img: image12,
+    },
+    {
+      id: 15,
+      name: "Peach Buttercream Birthday Cake ",
+      price: 18000,
+      img: image15,
+    },
+    {
+      id: 16,
+      name: "White Buttercream Birthday Cake ",
+      price: 19000,
+      img: image16,
+    },
+    {
+      id: 17,
+      name: "Box of 24 Naked cupcakes ",
+      price: 20000,
+      img: image11,
+    },
+    {
+      id: 18,
+      name: "Box of 12 Decorated Cupcakes ",
+      price: 18000,
+      img: image11,
+    },
   ];
 
   return (
