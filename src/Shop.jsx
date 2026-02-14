@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
   return (
     /* 1. Added break-inside-avoid to prevent card splitting */
     /* 2. Changed mb-8 to provide consistent vertical spacing in columns */
-    <div className="break-inside-avoid mb-8 group flex flex-col bg-[var(--color-primary)] p-4 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 font-['Quicksand']">
+    <div className="break-inside-avoid mb-8 group flex flex-col bg-stone-50 p-4 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 font-['Quicksand']">
       <div className="relative aspect-square overflow-hidden bg-stone-100 rounded-lg">
         <img
           src={product.img}
@@ -130,12 +130,12 @@ const Shop = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fff] font-['Quicksand']">
+    <div className="min-h-screen flex flex-col bg-primary font-['Quicksand']">
       <Toaster position="top-center" richColors />
 
       <Nav />
 
-      <div className="sticky top-[0px] z-30 bg-[var(--color-primary)]/80 backdrop-blur-md border-b border-stone-200">
+      <div className="sticky top-[0px] z-30 bg-primary/80 backdrop-blur-md border-b border-stone-200">
         <div className="cont py-4">
           <button
             onClick={() => navigate(-1)}

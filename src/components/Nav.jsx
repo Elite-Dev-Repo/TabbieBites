@@ -50,12 +50,12 @@ const Nav = () => {
           <div className="absolute top-[80px] left-0 w-full bg-[var(--color-primary)] lg:hidden shadow-lg">
             <ul className="flex flex-col gap-4 p-5">
               <li className="hover:text-(--color-secondary)">
-                <a href="#about" onClick={() => setIsMenuOpen(false)}>
+                <a href="/#about" onClick={() => setIsMenuOpen(false)}>
                   Our Story
                 </a>
               </li>
               <li className="hover:text-(--color-secondary)">
-                <a href="#services" onClick={() => setIsMenuOpen(false)}>
+                <a href="/#services" onClick={() => setIsMenuOpen(false)}>
                   Services
                 </a>
               </li>
@@ -65,7 +65,7 @@ const Nav = () => {
                 </a>
               </li>
               <li className="hover:text-(--color-secondary)">
-                <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                <a href="/#contact" onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </a>
               </li>
@@ -77,7 +77,7 @@ const Nav = () => {
               <li>
                 <button className="w-full bg-[#000] text-[#f2f2f2] px-5 py-3 border flex gap-2 items-center justify-center">
                   <ShoppingCart />
-                  <a href="" onClick={() => navigate("/shop")}>
+                  <a href="/shop" onClick={() => setIsMenuOpen(false)}>
                     Shop
                   </a>
                 </button>
