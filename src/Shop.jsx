@@ -109,7 +109,7 @@ const Shop = () => {
     {
       id: 20,
       name: "Convocation Cake",
-      price: 00000,
+      price: 40000,
       img: image17,
     },
     {
