@@ -199,7 +199,7 @@ const Pricing = () => {
               <div className="flex justify-between">
                 <span>With Peppered Meat</span>
                 <span className="text-[var(--color-secondary)] font-bold">
-                  1,500
+                  2000
                 </span>
               </div>
               <div className="flex justify-between">

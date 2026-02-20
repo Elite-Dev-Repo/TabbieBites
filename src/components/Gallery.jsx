@@ -42,12 +42,17 @@ function Gallery() {
       title: "image8",
       description: "Birthday Cake for a Loved One",
     },
+    {
+      image: image16,
+      title: "image16",
+      description: "Birthday Cake for Partner",
+    },
     { image: image9, title: "image9", description: "Food Plate" },
     { image: image10, title: "image10", description: "Convocation Cupcake" },
     {
       image: image11,
       title: "image11",
-      description: "Naked Convocation Cupcake",
+      description: "Naked Vanilla Cupcake",
     },
     { image: image12, title: "image12", description: "Chinchin" },
     { image: image13, title: "image13", description: "Sign Out Cake" },
@@ -61,11 +66,7 @@ function Gallery() {
       title: "image15",
       description: "Birthday Cake for a Loved One",
     },
-    {
-      image: image16,
-      title: "image16",
-      description: "Birthday Cake for Partner",
-    },
+
     { image: image17, title: "image17", description: "Graduation Cake" },
   ];
 

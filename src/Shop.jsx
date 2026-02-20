@@ -16,6 +16,9 @@ import image12 from "./assets/image (12).jpg";
 import image15 from "./assets/image (15).jpg";
 import image16 from "./assets/image (16).jpg";
 import image11 from "./assets/image (11).jpg";
+import image10 from "./assets/image (10).jpg";
+import image17 from "./assets/image17.jpg";
+
 const ProductCard = ({ product }) => {
   const [isAdded, setIsAdded] = useState(false);
 
@@ -100,8 +103,14 @@ const Shop = () => {
     {
       id: 12,
       name: "Big Jar - Crunchy Milky Chinchin",
-      price: 27500,
+      price: 10000,
       img: image12,
+    },
+    {
+      id: 20,
+      name: "Convocation Cake",
+      price: 00000,
+      img: image17,
     },
     {
       id: 15,
@@ -125,7 +134,7 @@ const Shop = () => {
       id: 18,
       name: "Box of 12 Decorated Cupcakes ",
       price: 18000,
-      img: image11,
+      img: image10,
     },
   ];
 
