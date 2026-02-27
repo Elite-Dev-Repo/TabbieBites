@@ -108,7 +108,7 @@ const Pricing = () => {
           {/* Buttercream High Layer Cakes Table */}
           <section className="min-h-fit md:col-span-2 bg-white/50 p-4 sm:p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20">
             <h3 className="text-2xl font-bold text-[var(--color-secondary)] mb-6">
-              Vanilla Buttercream High Layer Cakes
+              Vanilla Buttercream High Layer Cakes <br />
               <span className="text-center text-xs text-black/40">
                 (other cakes attract a slight increase in price.)
               </span>
