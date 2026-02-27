@@ -1,6 +1,7 @@
 import { MoveLeft, ArrowLeft } from "lucide-react";
 import Nav from "./Nav";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const Pricing = () => {
   const navigate = useNavigate();
@@ -107,7 +108,10 @@ const Pricing = () => {
           {/* Buttercream High Layer Cakes Table */}
           <section className="min-h-fit md:col-span-2 bg-white/50 p-4 sm:p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20">
             <h3 className="text-2xl font-bold text-[var(--color-secondary)] mb-6">
-              Buttercream High Layer Cakes
+              Vanilla Buttercream High Layer Cakes
+              <span className="text-center text-xs text-black/40">
+                (other cakes attract a slight increase in price.)
+              </span>
             </h3>
             <div className="overflow-x-auto rounded-xl border border-stone-200">
               <table className="w-full text-left border-collapse">
@@ -228,6 +232,7 @@ const Pricing = () => {
           </a>
         </footer>
       </div>
+      <Footer />
     </section>
   );
 };
