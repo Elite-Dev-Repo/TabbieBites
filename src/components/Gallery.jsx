@@ -75,7 +75,7 @@ function Gallery() {
       <section className="page-section  min-h-screen">
         <Nav></Nav>
         <div className="sticky top-20 z-10 bg-primary/80 backdrop-blur-md border-b border-gray-100">
-          <div className="cont py-4 flex items-center justify-between">
+          <div className="cont py-4 flex items-center mt-10 justify-between">
             <button
               onClick={() => navigate(-1)}
               className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"

@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
             toast.loading("Redirecting to WhatsApp...");
             setTimeout(() => handleOrder(), 100);
           }}
-          className="flex w-full items-center justify-center gap-2 py-3 px-6 uppercase text-[10px] tracking-[0.2em] font-bold transition-all active:scale-95 bg-[#000] text-[var(--color-primary)] hover:brightness-110"
+          className="flex w-full items-center  justify-center gap-2 py-3 px-6 uppercase text-[10px] tracking-[0.2em] font-bold transition-all active:scale-95 bg-[var(--color-secondary)] text-[var(--color-primary)] hover:brightness-110"
         >
           {isAdded ? (
             <>
@@ -139,51 +139,53 @@ const Shop = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-primary font-['Quicksand']">
-      <Toaster position="top-center" richColors />
-
+    <>
+      {" "}
       <Nav />
+      <div className="min-h-screen flex flex-col bg-primary font-['Quicksand']">
+        <Toaster position="top-center" richColors />
 
-      <div className="sticky top-[0px] z-30 bg-primary/80 backdrop-blur-md border-b border-stone-200">
-        <div className="cont py-4">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-sm font-semibold text-stone-600 hover:text-[var(--color-secondary)] transition-all duration-300 group"
-          >
-            <ArrowLeft
-              size={18}
-              className="group-hover:-translate-x-1 transition-transform"
-            />
-            <span className="uppercase tracking-widest text-[10px]">
-              Go Back
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <main className="flex-grow py-12">
-        <div className="cont">
-          <header className="flex flex-col gap-2 mb-10">
-            <h3 className="text-3xl md:text-5xl font-bold text-[var(--color-secondary)]">
-              Shop Collection
-            </h3>
-            <p className="text-[10px] text-stone-500 uppercase tracking-[0.3em] font-bold">
-              If you can't find what you're looking for, send us a message on
-              WhatsApp
-            </p>
-          </header>
-
-          {/* 3. REPLACED GRID WITH COLUMNS */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-8">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+        <div className="sticky top-[0px] z-30 mt-10 bg-primary/80 backdrop-blur-md border-b border-stone-200">
+          <div className="cont py-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2 text-sm font-semibold text-stone-600 hover:text-[var(--color-secondary)] transition-all duration-300 group"
+            >
+              <ArrowLeft
+                size={18}
+                className="group-hover:-translate-x-1 transition-transform"
+              />
+              <span className="uppercase tracking-widest text-[10px]">
+                Go Back
+              </span>
+            </button>
           </div>
         </div>
-      </main>
 
-      <Footer />
-    </div>
+        <main className="flex-grow py-12">
+          <div className="cont">
+            <header className="flex flex-col gap-2 mb-10">
+              <h3 className="text-3xl md:text-5xl font-bold text-[var(--color-secondary)]">
+                Shop Collection
+              </h3>
+              <p className="text-[10px] text-stone-500 uppercase tracking-[0.3em] font-bold">
+                If you can't find what you're looking for, send us a message on
+                WhatsApp
+              </p>
+            </header>
+
+            {/* 3. REPLACED GRID WITH COLUMNS */}
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-8">
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 };
 

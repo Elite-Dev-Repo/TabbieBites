@@ -1,4 +1,26 @@
+import React from "react";
 import logo from "../assets/logo.png";
+
+const footerLinks = {
+  navigation: [
+    { name: "Our Story", href: "/#about" },
+    { name: "Meet the Chef", href: "/#chef" },
+    { name: "Reviews", href: "/#reviews" },
+    { name: "Gallery", href: "/gallery" },
+  ],
+  services: [
+    { name: "Catering", href: "/#services" },
+    { name: "Custom Cakes", href: "/#services" },
+    { name: "Menu & Pricing", href: "/pricing" },
+    { name: "Order Online", href: "/shop" },
+  ],
+  support: [
+    { name: "Contact Us", href: "/#contact" },
+    { name: "Delivery Info", href: "/#shipping" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+  ],
+};
 
 const socials = [
   {
@@ -20,51 +42,111 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="w-screen min-h-[30vh] md:h-[40vh] bg-[#000] text-[#f2f2f2] flex flex-col border-t-2 border-foreground/20">
-      <div className="cont flex flex-col md:flex-row w-full h-full items-center justify-between gap-8 py-12 md:py-0 flex-grow">
-        {/* Logo - Centered on mobile */}
-        <a href="/" className="flex-1 flex justify-center md:justify-start">
-          <img
-            src={logo}
-            alt="BeadChef Logo"
-            className="w-[120px] md:w-[150px] brightness-0 invert"
-          />
-        </a>
+    <footer className="w-full bg-[#0a0a0a] text-[#f2f2f2] border-t border-white/10">
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        {/* Main Grid Structure */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">
+          {/* Column 1: Brand & Socials */}
+          <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <a
+              href="/"
+              className="inline-block mb-6 transition-transform hover:scale-105"
+            >
+              <img
+                src={logo}
+                alt="TabbieBakes"
+                className="w-[140px] md:w-[160px] brightness-0 invert"
+              />
+            </a>
+            <p className="text-sm opacity-50 leading-relaxed max-w-xs mb-8">
+              Crafting sensational treats from the finest ingredients to make
+              your special moments unforgettable.
+            </p>
+            <div className="flex gap-5">
+              {socials.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl opacity-60 hover:opacity-100 hover:text-[#c31644] transition-all"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
 
-        {/* Social Icons - Centered on mobile */}
-        <div className="flex-1 flex items-center justify-center md:justify-end">
-          <div className="flex gap-6 md:gap-4">
-            {socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl md:text-xl cursor-pointer hover:opacity-70 transition-opacity"
-              >
-                {social.icon}
-              </a>
-            ))}
+          {/* Column 2: Company */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31644] mb-6">
+              Navigation
+            </h4>
+            <ul className="space-y-4 text-sm opacity-60">
+              {footerLinks.navigation.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="hover:opacity-100 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31644] mb-6">
+              Services
+            </h4>
+            <ul className="space-y-4 text-sm opacity-60">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="hover:opacity-100 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Support */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31644] mb-6">
+              Support
+            </h4>
+            <ul className="space-y-4 text-sm opacity-60">
+              {footerLinks.support.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="hover:opacity-100 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-[#f2f2f2]/10 py-6 md:py-0 md:h-[90px] flex items-center">
-        <div className="cont w-full">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-[10px] md:text-sm opacity-60 text-center">
-            <a
-              href="https://oyenekanemmanuel.xyz"
-              target="_blank"
-              className="hover:underline"
-            >
-              Developed by Elite DEV
-            </a>
-            <span className="hidden md:inline">|</span>
-            <span>
-              © {new Date().getFullYear()} TabbieBakes. All rights Reserved.
-            </span>
-          </div>
+        {/* Bottom Credits Bar */}
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-widest opacity-40">
+          <p>© {new Date().getFullYear()} TabbieBakes. All rights Reserved.</p>
+          <a
+            href="https://oyenekanemmanuel.xyz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-100 hover:text-[#c31644] transition-colors"
+          >
+            Developed by Elite DEV
+          </a>
         </div>
       </div>
     </footer>

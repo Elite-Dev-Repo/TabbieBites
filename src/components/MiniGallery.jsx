@@ -38,7 +38,12 @@ function MiniGallery() {
     <body>
       <section className="page-section py-12  min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-semibold border-solid border w-fit mx-auto mb-9 px-7 py-3 rounded-full">
+          <h2
+            className="text-2xl text-(--color-primary) bg-(--color-secondary) font-semibold border-solid border w-fit mx-auto mb-9 px-7 py-3"
+            style={{
+              borderRadius: "10px 30px",
+            }}
+          >
             Our Past Works
           </h2>
 

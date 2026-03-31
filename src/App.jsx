@@ -5,10 +5,12 @@ import WhyChooseUs from "./components/WhyChooseUs";
 
 import Footer from "./components/Footer";
 import MiniGallery from "./components/MiniGallery";
+import Nav from "./components/Nav";
 
 const App = () => {
   return (
     <>
+      <Nav />
       <Hero />
       <WhyChooseUs />
       <About />

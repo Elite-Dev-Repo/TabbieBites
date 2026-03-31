@@ -36,8 +36,8 @@ html {
 
 @layer theme {
   :root {
-    --color-primary: #eae6dd;
-    --color-secondary: #ad7345;
+    --color-primary: #f5f0ea;
+    --color-secondary: #c31644;
   }
 }
 

@@ -161,7 +161,7 @@ const Services = () => {
       </div>
 
       {/* Quality Note & CTA */}
-      <div className="text-center bg-black rounded-2xl p-8 sm:p-10">
+      <div className="text-center bg-[var(--color-secondary)] rounded-2xl p-8 sm:p-10">
         <p className="italic text-[#ffffff98] mb-6 text-base sm:text-lg px-4">
           "We believe the best flavor comes from real butter, local eggs, and a
           lot of patience."
