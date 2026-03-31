@@ -61,7 +61,7 @@ function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] z-20"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] z-20"
             >
               <img
                 src={hero1}
@@ -74,7 +74,7 @@ function Hero() {
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-0 top-0 w-[200px] z-10"
+              className="absolute right-0 top-0 w-[250px] z-10"
             >
               <img
                 src={hero2}
@@ -92,7 +92,7 @@ function Hero() {
                 ease: "easeInOut",
                 delay: 0.5,
               }}
-              className="absolute right-0 bottom-20 w-[220px] z-30"
+              className="absolute right-0 bottom-20 w-[250px] z-30"
             >
               <img
                 src={hero3}
