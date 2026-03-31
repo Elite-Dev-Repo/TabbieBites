@@ -23,7 +23,7 @@ const Nav = () => {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <ChefHat size={32} className="text-[#c31644]" strokeWidth={2.5} />
-            <span className="hidden font-bold text-xl tracking-tight text-gray-800 sm:block">
+            <span className=" font-bold text-xl tracking-tight text-gray-800 block">
               Tabbie<span className="text-[#c31644]">Bakes</span>
             </span>
           </Link>

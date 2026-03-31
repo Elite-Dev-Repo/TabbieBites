@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import image1 from "../assets/image (1).jpg";
 import image4 from "../assets/image (4).jpg";
-import image6 from "../assets/image (6).jpg";
-import image7 from "../assets/image (7).jpg";
 
 import image9 from "../assets/image (9).jpg";
 import image10 from "../assets/image (10).jpg";
+import image6 from "../assets/image (6).jpg";
 
 import image16 from "../assets/image (16).jpg";
 import image17 from "../assets/image17.jpg";
+
+import img18 from "../assets/img18.jpg";
+import img19 from "../assets/img19.jpg";
+import img20 from "../assets/img20.jpg";
 
 function MiniGallery() {
   const [selectedImg, setSelectedImg] = useState(null);
 
   const imagelist = [
-    { image: image4, title: "image4", description: "Birthday Cake" },
+    { image: img20, title: "image20", description: "Bento Cake" },
+    { image: img18, title: "image18", description: "Convocation Cup Cake" },
+
     {
       image: image6,
       title: "image6",
@@ -22,14 +27,13 @@ function MiniGallery() {
     },
 
     { image: image1, title: "image1", description: "Small Chops" },
-    { image: image7, title: "image7", description: "Office Gatherings Cake" },
     {
       image: image16,
       title: "image16",
       description: "Birthday Cake for Partner",
     },
 
-    { image: image10, title: "image10", description: "Convocation Cupcake" },
+    { image: img19, title: "image19", description: "Birthday Cake" },
     { image: image17, title: "image17", description: "Graduation Cake" },
     { image: image9, title: "image9", description: "Food Plate" },
   ];
