@@ -6,18 +6,18 @@ import Footer from "./Footer";
 const Pricing = () => {
   const navigate = useNavigate();
   const cakeSizes = [
-    { size: '6"', prices: ["18k", "30k", "40k", "50k"] },
-    { size: '7"', prices: ["22k", "35k", "50k", "65k"] },
-    { size: '8"', prices: ["27k", "40k", "55k", "70k"] },
-    { size: '9"', prices: ["32k", "50k", "60k", "80k"] },
-    { size: '10"', prices: ["35k", "55k", "75k", "95k"] },
+    { size: '6"', prices: ["20k", "35k", "45k", "55k"] },
+    { size: '7"', prices: ["25k", "40k", "55k", "70k"] },
+    { size: '8"', prices: ["30k", "45k", "60k", "75k"] },
+    { size: '9"', prices: ["35k", "52k", "67k", "85k"] },
+    { size: '10"', prices: ["40k", "60k", "77k", "95k"] },
   ];
 
   return (
     <section className=" page-section font-['Quicksand'] bg-[var(--color-primary)]">
       <Nav />{" "}
-      <div className="cont">
-        <div className="cont py-4 flex items-center justify-between">
+      <div className="cont mb-6">
+        <div className="cont py-4 flex mt-5 items-center justify-between">
           <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"
@@ -41,8 +41,8 @@ const Pricing = () => {
             <div className="h-px w-12 bg-[var(--color-secondary)] opacity-30"></div>
           </div>
           <p className="italic text-stone-500 max-w-md mx-auto text-sm">
-            Note: Prices differ based on cake sizes, flavors, frosting, and
-            designs.
+            Please note, other cake flavors apart from Vanilla attract a slight
+            increase in price.
           </p>
         </header>
 
@@ -108,10 +108,7 @@ const Pricing = () => {
           {/* Buttercream High Layer Cakes Table */}
           <section className="min-h-fit md:col-span-2 bg-white/50 p-4 sm:p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20">
             <h3 className="text-2xl font-bold text-[var(--color-secondary)] mb-6">
-              Vanilla Buttercream High Layer Cakes <br />
-              <span className="text-center text-xs text-black/40">
-                (other cakes attract a slight increase in price.)
-              </span>
+              Buttercream High Layer Cakes
             </h3>
             <div className="overflow-x-auto rounded-xl border border-stone-200">
               <table className="w-full text-left border-collapse">
@@ -139,6 +136,7 @@ const Pricing = () => {
                     <tr
                       key={item.size}
                       className="hover:bg-white/80 transition-colors"
+                      Tracy
                     >
                       <td className="p-4 font-bold text-stone-800 bg-stone-100/50">
                         {item.size}
