@@ -15,6 +15,8 @@ import image13 from "../assets/image (13).jpg";
 import image14 from "../assets/image (14).jpg";
 import image15 from "../assets/image (15).jpg";
 import image16 from "../assets/image (16).jpg";
+import image21 from "../assets/image21.jpg";
+import image22 from "../assets/image22.jpg";
 import image17 from "../assets/image17.jpg";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -26,6 +28,8 @@ function Gallery() {
   const [selectedImg, setSelectedImg] = useState(null);
 
   const imagelist = [
+    { image: image21, title: "image1", description: "cake for a loved one" },
+    { image: image22, title: "image1", description: "Birthday Cake" },
     { image: image1, title: "image1", description: "Small Chops" },
     { image: image2, title: "image2", description: "pancakes" },
     { image: image3, title: "image3", description: "Birthday Cake" },

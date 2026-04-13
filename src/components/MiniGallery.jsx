@@ -12,11 +12,15 @@ import image17 from "../assets/image17.jpg";
 import img18 from "../assets/img18.jpg";
 import img19 from "../assets/img19.jpg";
 import img20 from "../assets/img20.jpg";
+import img21 from "../assets/image21.jpg";
+import img22 from "../assets/image22.jpg";
 
 function MiniGallery() {
   const [selectedImg, setSelectedImg] = useState(null);
 
   const imagelist = [
+    { image: img21, title: "image1", description: "cake for a loved one" },
+    { image: img22, title: "image1", description: "Birthday Cake" },
     { image: img20, title: "image20", description: "Bento Cake" },
     { image: img18, title: "image18", description: "Convocation Cup Cake" },
 
@@ -35,7 +39,6 @@ function MiniGallery() {
 
     { image: img19, title: "image19", description: "Birthday Cake" },
     { image: image17, title: "image17", description: "Graduation Cake" },
-    { image: image9, title: "image9", description: "Food Plate" },
   ];
 
   return (
