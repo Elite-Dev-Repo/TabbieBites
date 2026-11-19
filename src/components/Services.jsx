@@ -46,7 +46,7 @@ const steps = [
 ];
 
 export default function Services() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const toggleService = (index) => {
     setOpenIndex((current) => (current === index ? -1 : index));

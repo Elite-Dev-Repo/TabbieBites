@@ -21,7 +21,7 @@ export default function About() {
     >
       <div
         ref={tiltRef}
-        className="flex items-center  justify-center max-h-[500px] overflow-hidden w-140 data-tilt border-5 border-primary outline-4"
+        className="flex items-center max-w-[90vw] justify-center max-h-[500px] overflow-hidden w-140 data-tilt border-5 border-primary outline-4"
         style={{ borderRadius: "50% 50% 0px 50%" }}
         data-tilt
       >

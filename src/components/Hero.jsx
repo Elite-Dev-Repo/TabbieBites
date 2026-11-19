@@ -23,13 +23,13 @@ function Hero() {
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-0 before:[background-image:linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] before:[background-size:50px_50px] before:[mask-image:linear-gradient(to_bottom,rgb(250,250,250)_50%,transparent_100%)] before:[-webkit-mask-image:linear-gradient(to_bottom,rgb(250,250,250)_50%,transparent_100%)]">
       <Nav />
       <div className="mx-auto cont px-6 lg:px-10 w-full min-h-screen relative">
-        <div className="absolute left-10 top-40 w-30 h-30">
+        <div className="absolute max-sm:hidden left-10 top-40 w-30 h-30">
           <img src={cake} alt="" className="w-full h-full" />
         </div>
-        <div className="absolute left-80 top-95 w-20 h-20">
+        <div className="absolute max-sm:-bottom-10 left-80 top-95 w-20 h-20">
           <img src={flower} alt="" className="w-full h-full" />
         </div>
-        <div className="absolute right-10 top-40 w-30 h-30">
+        <div className="absolute max-sm:right-7 max-sm:top-55 right-10 top-40 w-30 h-30">
           <img src={rose} alt="" className="w-full h-full" />
         </div>
         <div className="w-full flex flex-col items-center gap-12 pt-10 min-h-screen">
