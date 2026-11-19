@@ -9,7 +9,7 @@ export default function About() {
   useEffect(() => {
     const el = tiltRef.current;
     if (!el) return;
-    VanillaTilt.init(el);
+    VanillaTilt.init(el, { glare: true });
     return () => el.vanillaTilt?.destroy();
   }, []);
 

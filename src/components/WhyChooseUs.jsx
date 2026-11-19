@@ -169,7 +169,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right Side: Full-Height Feature Image */}
-          <div className="grid grid-cols-2 col-span-4 gap-4">
+          <div className="grid grid-cols-2 lg:col-span-4 gap-4">
             {images.map((img, i) => {
               return (
                 <div

@@ -2,10 +2,10 @@ import React from "react";
 import { motion as Motion } from "framer-motion";
 import Nav from "./Nav";
 import hero1 from "../assets/image24.jpg";
-import hero2 from "../assets/image2.jpg";
-import hero3 from "../assets/image3.jpg";
-import hero4 from "../assets/image19.jpg";
-import hero5 from "../assets/image20.jpg";
+import hero2 from "../assets/image19.jpg";
+import hero3 from "../assets/image31.jpg";
+import hero4 from "../assets/image30.jpg";
+import hero5 from "../assets/image17.jpg";
 import cake from "../assets/cake.png";
 import rose from "../assets/rose.png";
 import flower from "../assets/flower.png";
@@ -29,7 +29,7 @@ function Hero() {
         <div className="absolute max-sm:-bottom-10 left-80 top-95 w-20 h-20">
           <img src={flower} alt="" className="w-full h-full" />
         </div>
-        <div className="absolute max-sm:right-7 max-sm:top-55 right-10 top-40 w-30 h-30">
+        <div className="absolute max-sm:hidden max-sm:top-55 right-10 top-40 w-30 h-30">
           <img src={rose} alt="" className="w-full h-full" />
         </div>
         <div className="w-full flex flex-col items-center gap-12 pt-10 min-h-screen">
