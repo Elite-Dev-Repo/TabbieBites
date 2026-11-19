@@ -26,7 +26,7 @@ function Hero() {
         <div className="absolute max-sm:hidden left-10 top-40 w-30 h-30">
           <img src={cake} alt="" className="w-full h-full" />
         </div>
-        <div className="absolute max-sm:-bottom-10 left-80 top-95 w-20 h-20">
+        <div className="absolute max-sm:top-105 left-80 top-95 w-20 h-20">
           <img src={flower} alt="" className="w-full h-full" />
         </div>
         <div className="absolute max-sm:hidden max-sm:top-55 right-10 top-40 w-30 h-30">
