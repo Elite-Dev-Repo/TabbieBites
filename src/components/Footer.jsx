@@ -1,156 +1,107 @@
-import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/image27.png";
 
-const footerLinks = {
-  navigation: [
-    { name: "Our Story", href: "/#about" },
-    { name: "Meet the Chef", href: "/#chef" },
-    { name: "Reviews", href: "/#reviews" },
-    { name: "Gallery", href: "/gallery" },
-  ],
-  services: [
-    { name: "Catering", href: "/#services" },
-    { name: "Custom Cakes", href: "/#services" },
-    { name: "Menu & Pricing", href: "/pricing" },
-    { name: "Order Online", href: "/shop" },
-  ],
-  support: [
-    { name: "Contact Us", href: "/#contact" },
-    { name: "Delivery Info", href: "/#shipping" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Privacy Policy", href: "/privacy" },
-  ],
-};
-
-const socials = [
+const columns = [
   {
-    name: "Instagram",
-    icon: <i className="fa-brands fa-instagram"></i>,
-    url: "https://www.instagram.com/tabbie_bakes",
+    title: "Explore",
+    links: [
+      { name: "Our story", href: "/#about" },
+      { name: "Our work", href: "/gallery" },
+      { name: "Services", href: "/#services" },
+    ],
   },
   {
-    name: "WhatsApp",
-    icon: <i className="fa-brands fa-whatsapp"></i>,
-    url: "https://wa.me/message/JDAMXIQTPNBSO1",
+    title: "Order",
+    links: [
+      { name: "Custom cakes", href: "/#services" },
+      { name: "Menu & pricing", href: "/pricing" },
+      { name: "Shop", href: "/shop" },
+    ],
   },
   {
-    name: "Tiktok",
-    icon: <i className="fa-brands fa-tiktok"></i>,
-    url: "https://www.tiktok.com/@tabbie_bakes",
+    title: "Say hello",
+    links: [
+      {
+        name: "Instagram",
+        href: "https://www.instagram.com/tabbie_bakes",
+        icon: "hgi-instagram",
+      },
+      {
+        name: "WhatsApp",
+        href: "https://wa.me/message/JDAMXIQTPNBSO1",
+        icon: "hgi-whatsapp",
+      },
+      {
+        name: "Email",
+        href: "mailto:dorcasoyenekan3@gmail.com",
+        icon: "hgi-mail-01",
+      },
+    ],
   },
 ];
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="w-full bg-[#0a0a0a] text-[#f2f2f2] border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* Main Grid Structure */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">
-          {/* Column 1: Brand & Socials */}
-          <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <a
-              href="/"
-              className="inline-block mb-6 transition-transform hover:scale-105"
-            >
+    <footer className="bg-[#211b1b] pt-[4.5rem] pb-6 text-primary">
+      <div className="cont">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 pb-16 min-[760px]:grid-cols-[1.5fr_repeat(3,1fr)] min-[760px]:gap-12">
+          <div className="col-span-2 min-[760px]:col-span-1">
+            <a href="/" aria-label="Tabbie Bakes home">
               <img
                 src={logo}
-                alt="TabbieBakes"
-                className="w-[140px] md:w-[160px] brightness-0 invert"
+                alt="Tabbie Bakes"
+                className="block max-h-[68px] w-[145px] object-contain object-left"
               />
             </a>
-            <p className="text-sm opacity-50 leading-relaxed max-w-xs mb-8">
-              Crafting sensational treats from the finest ingredients to make
-              your special moments unforgettable.
+            <p className="mt-[1.4rem] text-[0.9rem] leading-[1.7] text-[#b7aeaa]">
+              Made with care.
+              <br />
+              Shared with joy.
             </p>
-            <div className="flex gap-5">
-              {socials.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xl opacity-60 hover:opacity-100 hover:text-[#c31644] transition-all"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Column 2: Company */}
-          <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31644] mb-6">
-              Navigation
-            </h4>
-            <ul className="space-y-4 text-sm opacity-60">
-              {footerLinks.navigation.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:opacity-100 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Services */}
-          <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31644] mb-6">
-              Services
-            </h4>
-            <ul className="space-y-4 text-sm opacity-60">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:opacity-100 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Support */}
-          <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#c31644] mb-6">
-              Support
-            </h4>
-            <ul className="space-y-4 text-sm opacity-60">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:opacity-100 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {columns.map((column) => (
+            <nav
+              className="text-[#c8c0bd]"
+              key={column.title}
+              aria-label={column.title}
+            >
+              <h2 className="mb-[1.2rem] mt-[0.4rem] text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#e99bad]">
+                {column.title}
+              </h2>
+              <ul className="m-0 grid list-none gap-[0.8rem] p-0">
+                {column.links.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                      className="inline-flex items-center gap-2 text-[0.86rem] text-[#c8c0bd] no-underline transition-colors hover:text-white"
+                    >
+                      {link.icon && (
+                        <i
+                          className={`hgi-stroke ${link.icon} inline-block text-base leading-none`}
+                          aria-hidden="true"
+                        />
+                      )}
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
 
-        {/* Bottom Credits Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-widest opacity-40">
-          <p>© {new Date().getFullYear()} TabbieBakes. All rights Reserved.</p>
+        <div className="flex justify-between gap-4 border-t border-[#ffffff1c] pt-[1.2rem] text-[0.7rem] uppercase tracking-[0.08em] text-[#8d8380]">
+          <span>© {new Date().getFullYear()} Tabbie Bakes</span>
           <a
-            href="https://oyenekanemmanuel.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-100 hover:text-[#c31644] transition-colors"
+            href="/"
+            className="text-[#c8c0bd] no-underline transition-colors hover:text-white"
           >
-            Developed by Elite DEV
+            Back to top ↑
           </a>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

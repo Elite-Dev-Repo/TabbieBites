@@ -10,7 +10,6 @@ import Nav from "./components/Nav";
 const App = () => {
   return (
     <>
-      <Nav />
       <Hero />
       <WhyChooseUs />
       <About />

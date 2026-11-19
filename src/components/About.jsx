@@ -1,56 +1,59 @@
-import React from "react";
+import tabbie from "../assets/image25.jpg";
+import VanillaTilt from "vanilla-tilt";
 
-import tabbie from "../assets/tabbie.jpg";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
-const About = () => {
+export default function About() {
+  const tiltRef = useRef(null);
+
+  useEffect(() => {
+    const el = tiltRef.current;
+    if (!el) return;
+    VanillaTilt.init(el);
+    return () => el.vanillaTilt?.destroy();
+  }, []);
+
   return (
-    <section className="page-section overflow-hidden">
+    <section
+      className="w-full min-h-screen flex flex-col min-md:flex-row items-center justify-center bg-[#eee8e3] text-[#211b1b] min-[760px]:grid-cols-2"
+      id="about"
+      aria-labelledby="story-title"
+    >
       <div
-        className="cont py-8 sm:py-12 lg:py-5 flex flex-col lg:flex-row gap-8 lg:gap-5 min-h-screen justify-center items-center overflow-hidden"
-        id="about"
+        ref={tiltRef}
+        className="flex items-center  justify-center max-h-[500px] overflow-hidden w-140 data-tilt border-5 border-primary outline-4"
+        style={{ borderRadius: "50% 50% 0px 50%" }}
+        data-tilt
       >
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="w-full lg:w-[40%] h-[50vh] sm:h-[60vh] lg:h-[80vh]"
+        <img
+          src={tabbie}
+          alt="Tabbie, founder of Tabbie Bakes"
+          className="block h-full w-full object-cover object-[center_35%]"
+        />
+      </div>
+      <div className="max-w-[650px]  self-center p-[clamp(3rem,8vw,8rem)] max-[760px]:px-6 max-[760px]:py-14">
+        <h2
+          id="story-title"
+          className="mb-[1.7rem] mt-[0.9rem] text-[clamp(2.4rem,5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]"
         >
-          <img
-            src={tabbie}
-            className="w-full h-full object-cover object-center rounded-lg lg:rounded-none"
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="w-full lg:w-[40%] flex flex-col justify-around items-center p-4 sm:p-6 lg:p-[1em] h-full"
-        >
-          <h3 className="font-bold text-2xl sm:text-3xl lg:text-[1.5em] text-[var(--color-secondary)] mb-4 lg:mb-0">
-            Our Story
-          </h3>
-          <p className="text-sm sm:text-base lg:text-[1em] leading-relaxed sm:leading-[1.8em] lg:leading-[2em] tracking-wide text-center">
-            At Tabbie Bakes, baking isn’t just a business—it’s our family’s love
-            language. As a family-run bakery, we believe that the best memories
-            are made around the table, which is why we pour our hearts into
-            crafting fresh, wholesome cakes and pastries that taste like home.{" "}
-            <br className="hidden sm:block" /> We refuse to take shortcuts. By
-            marrying time-honored traditional techniques with the finest
-            locally-sourced ingredients, we ensure every bite is a perfect
-            balance of rich flavor and mindful nutrition.{" "}
-            <br className="hidden sm:block" /> From our kitchen to your
-            doorstep, our signature collection offers a vibrant spectrum of
-            flavors designed to satisfy every palate. Whether you are indulging
-            in a quiet moment of self-care or searching for a hand-crafted gift
-            to brighten someone’s day, you’ll find something truly special at
-            Tabbie Bakes.
-          </p>
-        </motion.div>
+          Made with care.
+          <br />
+          <span className="text-[#a92d4b]">Shared with joy.</span>
+        </h2>
+        <p className="max-w-[510px] text-base leading-[1.85] text-[#5f5754]">
+          Tabbie Bakes is a family-run kitchen built around a simple idea: the
+          best moments are better when there is something lovely to share.
+        </p>
+        <p className="max-w-[510px] text-base leading-[1.85] text-[#5f5754]">
+          We make fresh cakes and pastries with care, combining familiar,
+          comforting flavours with a personal touch. From a quiet treat to a
+          table full of guests, every order gets the same attention.
+        </p>
+        <div className="mt-8 flex items-center gap-3 text-[0.82rem] text-[#a92d4b]">
+          <span className="block h-px w-[34px] bg-[#a92d4b]" />{" "}
+          <span>From our kitchen, with love.</span>
+        </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

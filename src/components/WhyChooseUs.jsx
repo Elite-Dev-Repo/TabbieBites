@@ -1,110 +1,192 @@
-import React from "react";
-import { Award, Clock, Heart, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import img1 from "../assets/image3.jpg";
+import img2 from "../assets/image6.jpg";
+import img3 from "../assets/image8.jpg";
+import img4 from "../assets/image7.jpg";
 
-const WhyChooseUs = () => {
-  const features = [
-    {
-      icon: <Sparkles strokeWidth={1.5} />,
-      title: "Fresh Ingredients",
-      desc: "We use only the finest, freshest ingredients sourced locally for every creation.",
-
-      number: "01",
-    },
-    {
-      icon: <Heart strokeWidth={1.5} />,
-      title: "Made to Order",
-      desc: "Every item is crafted specifically for you with love, care, and attention to detail.",
-
-      number: "02",
-    },
-    {
-      icon: <Award strokeWidth={1.5} />,
-      title: "Creative Designs",
-      desc: "Custom designs tailored to match your unique vision and exceed expectations.",
-    
-      number: "03",
-    },
-    {
-      icon: <Clock strokeWidth={1.5} />,
-      title: "Timely Delivery",
-      desc: "Always on time for your special occasion—that is our professional guarantee.",
-  
-      number: "04",
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-    },
-  };
-
+const features = [
+  {
+    icon: "hgi-sparkles",
+    title: "Good ingredients",
+    desc: "Fresh, thoughtfully sourced ingredients in every batch.",
+  },
+  {
+    icon: "hgi-favourite",
+    title: "Made for you",
+    desc: "Each order is prepared to suit your occasion and your taste.",
+  },
+  {
+    icon: "hgi-award-01",
+    title: "Personal design",
+    desc: "Distinctive details, shaped around the idea you bring us.",
+  },
+  {
+    icon: "hgi-clock-01",
+    title: "Ready on time",
+    desc: "Clear communication and careful planning from start to finish.",
+  },
+];
+const images = [img1, img2, img3, img4];
+export default function WhyChooseUs() {
   return (
-    <section className="py-24  text-[#000] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8">
-        {/* Header Section: Left Aligned Editorial Style */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6 border-b border-white/10 pb-10">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-light tracking-tight">
-              Why Choose <span className="italic">TabbieBakes.</span>
-            </h2>
-          </div>
-          <p className="text-[#000] max-w-xs text-sm leading-relaxed uppercase tracking-widest">
-            Elevating the culinary experience through obsessive detail.
+    <section
+      className="bg-primary py-[clamp(5rem,10vw,9rem)] text-[#211b1b]"
+      aria-labelledby="why-title"
+    >
+      <div className="cont mx-auto px-6 lg:px-10">
+        {/* Left-Aligned Section Header */}
+        <div className="mx-auto mb-14 max-w-[680px] text-center">
+          <h2
+            id="why-title"
+            className="mb-[0.8rem] mt-[0.9rem] text-[clamp(2.4rem,5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]"
+          >
+            Why choose <span className="text-[#a92d4b]">Tabbiebakes.</span>
+          </h2>
+          <p className="m-0 text-base leading-[1.7] text-[#756c69]">
+            Small details make every gathering feel like yours.
           </p>
         </div>
 
-        {/* Features Grid: Minimalist Bento */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-4"
-        >
-          {features.map((item, i) => (
-            <motion.div
-              key={i}
-              variants={itemVariants}
-              className="group relative p-10 border-l border-b md:border-b-0 border-white/10 hover:bg-white/[0.02] bg-[var(--color-secondary)] transition-colors duration-500"
-            >
-              {/* Corner Number Decor */}
-              <span className="absolute top-6 right-8 text-xs font-mono text-white/40 group-hover:text-[var(--color-secondary)] transition-colors">
-                {item.number}
-              </span>
+        {/* Main Split Layout: Left Bento Grid (2/3) + Right Tall Image (1/3) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          {/* Left Side: 2-Row Bento Grid */}
+          <div className="lg:col-span-8 flex flex-col gap-4">
+            {/* Top Row: 2 Equal Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {features.slice(0, 2).map((feature, index) => (
+                <article
+                  key={feature.title}
+                  className={`flex flex-col justify-between min-h-[210px] rounded-2xl p-6 transition-transform duration-300 ${
+                    index === 0
+                      ? "bg-tertiary text-primary"
+                      : "bg-primary border border-tertiary/15 text-tertiary"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-3xl font-semibold tracking-tight">
+                      0{index + 1}
+                    </span>
+                    <div
+                      className={`w-10 h-10 flex items-center justify-center  ${index == 1 ? "bg-tertiary text-primary" : "text-tertiary bg-primary"}  rounded-lg`}
+                    >
+                      <i
+                        className={`hgi-stroke ${feature.icon} inline-block text-2xl leading-none`}
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
 
-              <div className="mb-8 absolute text-[var(--color-primary)] -top-10 left-1/2 -translate-x-1/2 bg-[var(--color-secondary)] p-3 rounded-full border-3 border-(--color-primary) transition-transform duration-500 group-hover:scale-110">
-                {React.cloneElement(item.icon, { size: 36 })}
-              </div>
+                  <div className="mt-8">
+                    <p className="text-sm font-light leading-relaxed opacity-85 mb-4">
+                      {feature.desc}
+                    </p>
+                    <div
+                      className={`pt-3 border-t ${
+                        index === 0 ? "border-primary/15" : "border-tertiary/10"
+                      }`}
+                    >
+                      <h3 className="text-sm font-medium tracking-tight">
+                        {feature.title}
+                      </h3>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
 
-              <h4 className="text-lg font-medium tracking-[0.15em] group-hover:text-[#000] text-(--color-primary) mb-4 group-hover:translate-x-2 transition-transform duration-300">
-                {item.title}
-              </h4>
+            {/* Bottom Row: 3 Columns (Card 3 + Center Editorial Quote Card + Card 4) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {/* Card 3 */}
+              <article className="flex flex-col justify-between min-h-[230px] rounded-2xl bg-primary border border-tertiary/15 text-tertiary p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-3xl font-semibold tracking-tight">
+                    03
+                  </span>
+                  <div className="w-10 h-10 flex items-center justify-center bg-tertiary text-primary rounded-lg">
+                    <i
+                      className={`hgi-stroke ${features[2].icon} inline-block text-2xl leading-none`}
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
 
-              <p className="text-gray-300 text-sm leading-loose font-light group-hover:text-[#000] transition-colors">
-                {item.desc}
-              </p>
+                <div className="mt-6">
+                  <p className="text-xs font-light leading-relaxed opacity-85 mb-4">
+                    {features[2].desc}
+                  </p>
+                  <div className="pt-3 border-t border-tertiary/10">
+                    <h3 className="text-sm font-medium tracking-tight">
+                      {features[2].title}
+                    </h3>
+                  </div>
+                </div>
+              </article>
 
-              {/* Bottom Accent Line */}
-              <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[var(--color-secondary)] transition-all duration-700 group-hover:w-full" />
-            </motion.div>
-          ))}
-        </motion.div>
+              {/* Center Editorial Card (Matches the middle quote block in your reference) */}
+              <article className="flex flex-col justify-between min-h-[230px] rounded-2xl bg-primary border border-tertiary/15 text-tertiary p-6">
+                <div>
+                  <h3 className="text-sm font-semibold tracking-tight mb-2">
+                    Crafting Lasting Memories
+                  </h3>
+                  <p className="text-xs font-light leading-relaxed opacity-75">
+                    "Your celebration is our craft — we don't just bake cakes,
+                    we create the centerpiece of your gathering."
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-tertiary/10 mt-6">
+                  <span className="text-xs font-medium tracking-tight">
+                    TabbieBakes Kitchen
+                  </span>
+                </div>
+              </article>
+
+              {/* Card 4 (Accent Card matching the bottom-right green block) */}
+              <article className="flex flex-col justify-between min-h-[230px] rounded-2xl bg-secondary text-primary p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-3xl font-semibold tracking-tight">
+                    04
+                  </span>
+                  <div className="w-10 h-10 flex items-center justify-center bg-primary text-tertiary rounded-lg">
+                    <i
+                      className={`hgi-stroke ${features[3].icon} inline-block text-2xl leading-none`}
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <p className="text-xs font-light leading-relaxed opacity-90 mb-4">
+                    {features[3].desc}
+                  </p>
+                  <div className="pt-3 border-t border-primary/20">
+                    <h3 className="text-sm font-medium tracking-tight">
+                      {features[3].title}
+                    </h3>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          {/* Right Side: Full-Height Feature Image */}
+          <div className="grid grid-cols-2 col-span-4 gap-4">
+            {images.map((img, i) => {
+              return (
+                <div
+                  key={i}
+                  className="h-full min-h-[360px] lg:min-h-full w-full overflow-hidden rounded-2xl"
+                >
+                  <img
+                    src={img}
+                    alt="TabbieBakes handcrafted celebration cake"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
-};
-
-export default WhyChooseUs;
+}

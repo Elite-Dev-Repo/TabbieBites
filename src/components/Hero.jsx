@@ -1,35 +1,56 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { ShoppingCart } from "lucide-react";
-import hero1 from "../assets/hero1.png";
-import hero2 from "../assets/hero2.png";
-import hero3 from "../assets/hero3.png";
+import { motion as Motion } from "framer-motion";
+import Nav from "./Nav";
+import hero1 from "../assets/image24.jpg";
+import hero2 from "../assets/image2.jpg";
+import hero3 from "../assets/image3.jpg";
+import hero4 from "../assets/image19.jpg";
+import hero5 from "../assets/image20.jpg";
+import cake from "../assets/cake.png";
+import rose from "../assets/rose.png";
+import flower from "../assets/flower.png";
+
+const heroImages = [
+  { src: hero1, alt: "Cheesecake slice", rotate: -12 },
+  { src: hero2, alt: "Stack of pancakes", rotate: -6 },
+  { src: hero3, alt: "Celebration cake", rotate: 0 },
+  { src: hero4, alt: "50th birthday cake", rotate: 6 },
+  { src: hero5, alt: "Love You bento cake", rotate: 12 },
+];
 
 function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Decorative Background Element */}
-      <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-[#c31644]/5 blur-3xl" />
-
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 w-full min-h-screen">
-        <div className="flex flex-col lg:flex-row items-center gap-12 pt-10 lg:pt-20 min-h-screen w-full">
-          {/* Left Content Side */}
-          <div className="flex-1 text-center relative lg:text-left z-10 flex flex-col items-center lg:items-start justify-center">
-            <motion.div
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-0 before:[background-image:linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] before:[background-size:50px_50px] before:[mask-image:linear-gradient(to_bottom,rgb(250,250,250)_50%,transparent_100%)] before:[-webkit-mask-image:linear-gradient(to_bottom,rgb(250,250,250)_50%,transparent_100%)]">
+      <Nav />
+      <div className="mx-auto cont px-6 lg:px-10 w-full min-h-screen relative">
+        <div className="absolute left-10 top-40 w-30 h-30">
+          <img src={cake} alt="" className="w-full h-full" />
+        </div>
+        <div className="absolute left-80 top-95 w-20 h-20">
+          <img src={flower} alt="" className="w-full h-full" />
+        </div>
+        <div className="absolute right-10 top-40 w-30 h-30">
+          <img src={rose} alt="" className="w-full h-full" />
+        </div>
+        <div className="w-full flex flex-col items-center gap-12 pt-10 min-h-screen">
+          <div className="w-full h-full flex-1 text-center relative z-10">
+            <Motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full"
+              className="w-full flex flex-col items-center justify-center"
             >
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl lg:w-220 font-bold text-gray-900 leading-[1.1] tracking-tighter lg:absolute  lg:-top-50">
-                Crafted to Delight, <br />
-                Served with{" "}
-                <span className="relative inline-block py-2">
-                  <span className="px-5 py-1 bg-[var(--color-secondary)] text-white rounded-lg inline-block -rotate-6 lg:-rotate-12 whitespace-nowrap">
-                    Love.
-                  </span>
-                </span>
-              </h1>
+              <div className="w-fit relative px-15 py-9 border border-dashed border-tertiary/60">
+                <div className="absolute w-3 h-3 bg-tertiary -top-1.5 -left-1.5"></div>
+                <div className="absolute w-3 h-3 bg-tertiary -top-1.5 -right-1.5"></div>
+                <div className="absolute w-3 h-3 bg-tertiary -bottom-1.5 -left-1.5"></div>
+                <div className="absolute w-3 h-3 bg-tertiary -bottom-1.5 -right-1.5"></div>
+                <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-tertiary leading-normal tracking-tight ">
+                  Crafted to Delight, <br />
+                  Served with{" "}
+                  <span className="relative inline-block py-2">Love.</span>{" "}
+                </h1>
+              </div>
 
               <p className="max-w-xl text-lg text-gray-600 leading-relaxed mx-auto mt-6 lg:mt-12 lg:mx-0">
                 From fresh, locally sourced ingredients to sensational treats.
@@ -37,74 +58,43 @@ function Hero() {
                 highest culinary quality.
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <a
-                  href="https://wa.me/c/2348078391732"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex items-center gap-3 bg-[#c31644] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-[#c31644]/30 hover:bg-[#a11238] transition-all active:scale-95"
-                >
-                  View Catalog
-                  <ShoppingCart
-                    size={20}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </a>
+              {/* Fanned Arc Image Stack */}
+              <div className="mt-14 sm:mt-18 pb-12 flex gap-5 items-center justify-center -mb-12 sm:-mb-20">
+                {heroImages.map((image, i) => {
+                  // Calculate a parabolic curve: center items sit higher (y is more negative), outer items sit lower
+                  // i goes from 0 to 4. Center is i = 2.
+                  const distanceFromCenter = Math.abs(2 - i); // 2, 1, 0, 1, 2
+                  const yOffset = distanceFromCenter * distanceFromCenter * 14; // Creates a smooth arch shape
+
+                  return (
+                    <Motion.div
+                      key={image.alt}
+                      initial={{
+                        opacity: 0,
+                        y: yOffset + 60,
+                        rotate: image.rotate,
+                      }}
+                      animate={{ opacity: 1, y: yOffset, rotate: image.rotate }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.4 + i * 0.1,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                      style={{ zIndex: 10 + (2 - distanceFromCenter) }}
+                      className={`relative h-36 w-24 overflow-hidden rounded-2xl shadow-xl hover:scale-120 border-4 border-primary transition-transform duration-300 sm:h-52 sm:w-36 md:h-90 md:w-65 ${
+                        i !== 0 ? "-ml-6 sm:-ml-10" : ""
+                      }`}
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="h-full w-full object-cover"
+                      />
+                    </Motion.div>
+                  );
+                })}
               </div>
-            </motion.div>
-          </div>
-
-          {/* Right Image Collage Side - Hidden on Mobile per your original logic */}
-          <div className="flex-1 relative w-full hidden lg:block h-[600px]">
-            {/* Main Center Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] z-20"
-            >
-              <img
-                src={hero1}
-                alt="Signature Dish"
-                className="w-full h-auto drop-shadow-2xl hover:rotate-3 transition-transform duration-500"
-              />
-            </motion.div>
-
-            {/* Floating Top Right */}
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-0 top-0 w-[250px] z-10"
-            >
-              <img
-                src={hero2}
-                alt="Treat 1"
-                className="w-full h-auto drop-shadow-xl"
-              />
-            </motion.div>
-
-            {/* Floating Bottom Left */}
-            <motion.div
-              animate={{ y: [0, 15, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-              className="absolute right-0 bottom-20 w-[250px] z-30"
-            >
-              <img
-                src={hero3}
-                alt="Treat 2"
-                className="w-full h-auto drop-shadow-xl"
-              />
-            </motion.div>
-
-            {/* Abstract Shape Decor */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[300px] h-[300px] border-2 border-dashed border-gray-100 rounded-full animate-spin-slow" />
-            </div>
+            </Motion.div>
           </div>
         </div>
       </div>

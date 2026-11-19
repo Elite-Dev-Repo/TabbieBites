@@ -1,24 +1,5 @@
 import React, { useState } from "react";
-import image1 from "../assets/image (1).jpg";
-import image2 from "../assets/image (2).jpg";
-import image3 from "../assets/image (3).jpg";
-import image4 from "../assets/image (4).jpg";
-import image5 from "../assets/image (5).jpg";
-import image6 from "../assets/image (6).jpg";
-import image7 from "../assets/image (7).jpg";
-import image8 from "../assets/image (8).jpg";
-import image9 from "../assets/image (9).jpg";
-import image10 from "../assets/image (10).jpg";
-import image11 from "../assets/image (11).jpg";
-import image12 from "../assets/image (12).jpg";
-import image13 from "../assets/image (13).jpg";
-import image14 from "../assets/image (14).jpg";
-import image15 from "../assets/image (15).jpg";
-import image16 from "../assets/image (16).jpg";
-import image21 from "../assets/image21.jpg";
-import image22 from "../assets/image22.jpg";
-import image17 from "../assets/image17.jpg";
-import { ArrowLeft } from "lucide-react";
+import { galleryImages } from "../assets/galleryImages";
 import { useNavigate } from "react-router-dom";
 
 import Nav from "./Nav";
@@ -27,56 +8,11 @@ function Gallery() {
   const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const imagelist = [
-    { image: image21, title: "image1", description: "cake for a loved one" },
-    { image: image22, title: "image1", description: "Birthday Cake" },
-    { image: image1, title: "image1", description: "Small Chops" },
-    { image: image2, title: "image2", description: "pancakes" },
-    { image: image3, title: "image3", description: "Birthday Cake" },
-    { image: image4, title: "image4", description: "Birthday Cake" },
-    { image: image5, title: "image5", description: "Naked Cake" },
-    {
-      image: image6,
-      title: "image6",
-      description: "Traditional Themed Wedding Cake",
-    },
-    { image: image7, title: "image7", description: "Office Gatherings Cake" },
-    {
-      image: image8,
-      title: "image8",
-      description: "Birthday Cake for a Loved One",
-    },
-    {
-      image: image16,
-      title: "image16",
-      description: "Birthday Cake for Partner",
-    },
-    { image: image9, title: "image9", description: "Food Plate" },
-    { image: image10, title: "image10", description: "Convocation Cupcake" },
-    {
-      image: image11,
-      title: "image11",
-      description: "Naked Vanilla Cupcake",
-    },
-    { image: image12, title: "image12", description: "Chinchin" },
-    { image: image13, title: "image13", description: "Sign Out Cake" },
-    {
-      image: image14,
-      title: "image14",
-      description: "Birthday Cake for a Loved One",
-    },
-    {
-      image: image15,
-      title: "image15",
-      description: "Birthday Cake for a Loved One",
-    },
-
-    { image: image17, title: "image17", description: "Graduation Cake" },
-  ];
+  const imagelist = galleryImages;
 
   return (
     <body>
-      <section className="page-section  min-h-screen">
+      <section className="min-h-screen w-full overflow-x-hidden">
         <Nav></Nav>
         <div className="sticky top-20 z-10 bg-primary/80 backdrop-blur-md border-b border-gray-100">
           <div className="cont py-4 flex items-center mt-10 justify-between">
@@ -84,7 +20,7 @@ function Gallery() {
               onClick={() => navigate(-1)}
               className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"
             >
-              <ArrowLeft size={18} className="group-hover:text-primary" />
+              <i className="hgi-stroke hgi-arrow-left-01 inline-block text-[1.125rem] leading-none group-hover:text-primary" aria-hidden="true" />
               <span className="uppercase tracking-widest text-[10px]">
                 Go Back
               </span>
@@ -94,7 +30,7 @@ function Gallery() {
             </span>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="cont mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-center mb-12 text-gray-800">
             Our Past Works
           </h1>

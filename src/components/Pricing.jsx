@@ -1,4 +1,3 @@
-import { MoveLeft, ArrowLeft } from "lucide-react";
 import Nav from "./Nav";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
@@ -14,7 +13,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className=" page-section font-['Quicksand'] bg-[var(--color-primary)]">
+    <section className="min-h-screen w-full overflow-x-hidden font-['Quicksand'] bg-primary">
       <Nav />{" "}
       <div className="cont mb-6">
         <div className="cont py-4 flex mt-5 items-center justify-between">
@@ -22,7 +21,7 @@ const Pricing = () => {
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"
           >
-            <ArrowLeft size={18} className="group-hover:text-primary" />
+            <i className="hgi-stroke hgi-arrow-left-01 inline-block text-[1.125rem] leading-none group-hover:text-primary" aria-hidden="true" />
             <span className="uppercase tracking-widest text-[10px]">
               Go Back
             </span>
@@ -30,15 +29,15 @@ const Pricing = () => {
         </div>
         {/* Header */}
         <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-2 tracking-tight text-[var(--color-secondary)]">
+          <h1 className="text-5xl font-bold mb-2 tracking-tight text-secondary">
             Tabbie Bakes
           </h1>
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[var(--color-secondary)] opacity-30"></div>
+            <div className="h-px w-12 bg-secondary opacity-30"></div>
             <h2 className="text-xl tracking-[0.2em] font-medium text-stone-600 uppercase">
               Price List
             </h2>
-            <div className="h-px w-12 bg-[var(--color-secondary)] opacity-30"></div>
+            <div className="h-px w-12 bg-secondary opacity-30"></div>
           </div>
           <p className="italic text-stone-500 max-w-md mx-auto text-sm">
             Please note, other cake flavors apart from Vanilla attract a slight
@@ -48,8 +47,8 @@ const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Bento & Cupcakes */}
-          <section className="min-h-fit bg-white/50 p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold text-[var(--color-secondary)] mb-6 border-b border-[var(--color-secondary)]/10 pb-2">
+          <section className="min-h-fit bg-white/50 p-8 rounded-2xl shadow-sm border border-secondary/20 hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-bold text-secondary mb-6 border-b border-secondary/10 pb-2">
               Bento & Cupcakes
             </h3>
             <ul className="space-y-4 text-stone-700 font-medium">
@@ -58,7 +57,7 @@ const Pricing = () => {
                   Bento Size 4{" "}
                   <span className="text-xs opacity-60">(1 Layer)</span>
                 </span>
-                <span className="font-bold text-[var(--color-secondary)]">
+                <span className="font-bold text-secondary">
                   8k
                 </span>
               </li>
@@ -67,20 +66,20 @@ const Pricing = () => {
                   Bento Size 5{" "}
                   <span className="text-xs opacity-60">(1 Layer)</span>
                 </span>
-                <span className="font-bold text-[var(--color-secondary)]">
+                <span className="font-bold text-secondary">
                   10k
                 </span>
               </li>
-              <div className="my-4 border-t border-dashed border-[var(--color-secondary)]/20"></div>
+              <div className="my-4 border-t border-dashed border-secondary/20"></div>
               <li className="flex justify-between">
                 <span>Box of 6 Cupcakes</span>
-                <span className="font-bold text-[var(--color-secondary)]">
+                <span className="font-bold text-secondary">
                   10k
                 </span>
               </li>
               <li className="flex justify-between">
                 <span>Box of 12 Cupcakes</span>
-                <span className="font-bold text-[var(--color-secondary)]">
+                <span className="font-bold text-secondary">
                   20k
                 </span>
               </li>
@@ -88,17 +87,17 @@ const Pricing = () => {
           </section>
 
           {/* Wedding Cakes */}
-          <section className="min-h-fit bg-[var(--color-secondary)] p-8 rounded-2xl shadow-lg text-[var(--color-primary)] relative overflow-hidden">
+          <section className="min-h-fit bg-secondary p-8 rounded-2xl shadow-lg text-primary relative overflow-hidden">
             <h3 className="text-2xl font-bold mb-2">Wedding Cakes</h3>
             <p className="opacity-80 text-sm mb-6 uppercase tracking-wider font-semibold">
               Two Tiers (5" & 8")
             </p>
             <ul className="space-y-4">
-              <li className="flex justify-between items-center border-b border-[var(--color-primary)]/20 pb-2">
+              <li className="flex justify-between items-center border-b border-primary/20 pb-2">
                 <span className="text-lg">Fondant</span>
                 <span className="text-2xl font-bold">170k</span>
               </li>
-              <li className="flex justify-between items-center border-b border-[var(--color-primary)]/20 pb-2">
+              <li className="flex justify-between items-center border-b border-primary/20 pb-2">
                 <span className="text-lg">Buttercream</span>
                 <span className="text-2xl font-bold">80k</span>
               </li>
@@ -106,14 +105,14 @@ const Pricing = () => {
           </section>
 
           {/* Buttercream High Layer Cakes Table */}
-          <section className="min-h-fit md:col-span-2 bg-white/50 p-4 sm:p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20">
-            <h3 className="text-2xl font-bold text-[var(--color-secondary)] mb-6">
+          <section className="min-h-fit md:col-span-2 bg-white/50 p-4 sm:p-8 rounded-2xl shadow-sm border border-secondary/20">
+            <h3 className="text-2xl font-bold text-secondary mb-6">
               Buttercream High Layer Cakes
             </h3>
             <div className="overflow-x-auto rounded-xl border border-stone-200">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-[var(--color-secondary)] text-[var(--color-primary)]">
+                  <tr className="bg-secondary text-primary">
                     <th className="p-4 font-bold uppercase text-xs tracking-widest">
                       Size
                     </th>
@@ -157,8 +156,8 @@ const Pricing = () => {
           </section>
 
           {/* Cake Cuts */}
-          <section className="min-h-fit bg-white/50 p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20">
-            <h3 className="text-xl font-bold text-[var(--color-secondary)] mb-1">
+          <section className="min-h-fit bg-white/50 p-8 rounded-2xl shadow-sm border border-secondary/20">
+            <h3 className="text-xl font-bold text-secondary mb-1">
               Cake Cuts
             </h3>
             <p className="text-xs text-stone-400 mb-6 italic font-medium">
@@ -167,7 +166,7 @@ const Pricing = () => {
             <div className="space-y-4 font-medium">
               <div className="flex justify-between">
                 <span className="text-stone-700">Vanilla</span>
-                <span className="text-[var(--color-secondary)] font-bold">
+                <span className="text-secondary font-bold">
                   500{" "}
                   <small className="text-[10px] opacity-60 font-normal">
                     / CUT
@@ -176,22 +175,22 @@ const Pricing = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-stone-700">Red Velvet / Chocolate</span>
-                <span className="text-[var(--color-secondary)] font-bold">
+                <span className="text-secondary font-bold">
                   700{" "}
                   <small className="text-[10px] opacity-60 font-normal">
                     / CUT
                   </small>
                 </span>
               </div>
-              <p className="text-[10px] bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] py-1 px-3 rounded-full inline-block mt-4">
+              <p className="text-[10px] bg-secondary/10 text-secondary py-1 px-3 rounded-full inline-block mt-4">
                 * Minimum order: 100pcs
               </p>
             </div>
           </section>
 
           {/* Small Chops */}
-          <section className="min-h-fit bg-white/50 p-8 rounded-2xl shadow-sm border border-[var(--color-secondary)]/20">
-            <h3 className="text-xl font-bold text-[var(--color-secondary)] mb-1">
+          <section className="min-h-fit bg-white/50 p-8 rounded-2xl shadow-sm border border-secondary/20">
+            <h3 className="text-xl font-bold text-secondary mb-1">
               Small Chops
             </h3>
             <p className="text-xs text-stone-400 mb-6 italic font-medium">
@@ -200,17 +199,17 @@ const Pricing = () => {
             <div className="space-y-4 font-medium text-stone-700">
               <div className="flex justify-between">
                 <span>With Peppered Meat</span>
-                <span className="text-[var(--color-secondary)] font-bold">
+                <span className="text-secondary font-bold">
                   2000
                 </span>
               </div>
               <div className="flex justify-between">
                 <span>With Peppered Chicken</span>
-                <span className="text-[var(--color-secondary)] font-bold">
+                <span className="text-secondary font-bold">
                   2,500
                 </span>
               </div>
-              <p className="text-[10px] bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] py-1 px-3 rounded-full inline-block mt-4">
+              <p className="text-[10px] bg-secondary/10 text-secondary py-1 px-3 rounded-full inline-block mt-4">
                 * Minimum order: 20 plates
               </p>
             </div>
@@ -218,15 +217,22 @@ const Pricing = () => {
         </div>
 
         {/* Footer CTA */}
-        <footer className="text-center mt-16 pt-8 border-t border-[var(--color-secondary)]/20">
+        <footer className="text-center mt-16 pt-8 border-t border-secondary/20">
           <p className="text-stone-500 text-sm mb-4 font-medium">
             Ready to place an order?
           </p>
 
-          <a href="https://wa.me/c/2348078391732" target="_blank">
-            <button className="bg-[var(--color-secondary)] text-[var(--color-primary)] px-10 py-3 rounded-full hover:brightness-110 transition-all shadow-md active:scale-95 font-bold uppercase tracking-widest text-xs">
-              Contact Tabbie Bakes
-            </button>
+          <a
+            href="https://wa.me/c/2348078391732"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-secondary text-primary px-10 py-3 rounded-full hover:brightness-110 transition-all shadow-md active:scale-95 font-bold uppercase tracking-widest text-xs"
+          >
+            <i
+              className="hgi-stroke hgi-whatsapp inline-block text-xl leading-none"
+              aria-hidden="true"
+            />
+            Contact Tabbie Bakes
           </a>
         </footer>
       </div>

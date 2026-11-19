@@ -1,123 +1,89 @@
-import React, { useState } from "react";
-import image1 from "../assets/image (1).jpg";
-import image9 from "../assets/image (9).jpg";
-import image10 from "../assets/image (10).jpg";
-import image6 from "../assets/image (6).jpg";
+import { useState } from "react";
+import { galleryImages } from "../assets/galleryImages";
 
-import image16 from "../assets/image (16).jpg";
-import image17 from "../assets/image17.jpg";
-
-import img18 from "../assets/img18.jpg";
-import img19 from "../assets/img19.jpg";
-import img20 from "../assets/img20.jpg";
-import img21 from "../assets/image21.jpg";
-import img22 from "../assets/image22.jpg";
-
-function MiniGallery() {
-  const [selectedImg, setSelectedImg] = useState(null);
-
-  const imagelist = [
-    { image: img21, title: "image1", description: "cake for a loved one" },
-    { image: img22, title: "image1", description: "Birthday Cake" },
-    { image: img20, title: "image20", description: "Bento Cake" },
-    { image: img18, title: "image18", description: "Convocation Cup Cake" },
-
-    {
-      image: image6,
-      title: "image6",
-      description: "Traditional Themed Wedding Cake",
-    },
-
-    { image: image1, title: "image1", description: "Small Chops" },
-    {
-      image: image16,
-      title: "image16",
-      description: "Birthday Cake for Partner",
-    },
-
-    { image: img19, title: "image19", description: "Birthday Cake" },
-    { image: image17, title: "image17", description: "Graduation Cake." },
-  ];
-
+export default function MiniGallery() {
+  const [selected, setSelected] = useState(null);
   return (
-    <body>
-      <section className="page-section py-12 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2
-            className="text-2xl text-(--color-primary) bg-(--color-secondary) font-semibold border-solid border w-fit mx-auto mb-9 px-7 py-3"
-            style={{
-              borderRadius: "10px 30px",
-            }}
-          >
-            Our Past Works
-          </h2>
-
-          {/* Masonry Layout using CSS Columns */}
-          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {imagelist.map((item, index) => (
-              <div
-                key={index}
-                className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                onClick={() => setSelectedImg(item)}
-              >
-                <img
-                  src={item.image}
-                  alt={item.description}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <p className="text-white text-sm font-medium">
-                    {item.description}
-                  </p>
-                </div>
-
-                {/* Description for mobile/static view */}
-                <div className="p-3 bg-white md:hidden">
-                  <p className="text-xs text-gray-600 font-medium">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+    <section
+      className="bg-primary py-[clamp(5rem,9vw,8rem)] text-[#211b1b]"
+      aria-labelledby="gallery-title"
+    >
+      <div className="cont">
+        <div className="mb-10 flex flex-col items-start justify-between gap-8 min-[760px]:flex-row min-[760px]:items-end">
+          <div>
+            <span className="block text-[0.68rem] font-bold uppercase leading-[1.5] tracking-[0.18em] text-[#a92d4b]">
+              04 / From our kitchen
+            </span>
+            <h2
+              id="gallery-title"
+              className="mb-0 mt-[0.9rem] text-[clamp(2.4rem,5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]"
+            >
+              A few things <span className="text-[#a92d4b]">we've made.</span>
+            </h2>
           </div>
-        </div>
-
-        <div className=" p-5">
           <a
             href="/gallery"
-            className="px-8 py-3 border hover:bg-black hover:text-white float-right text-center mr-7 mb-12"
+            className="inline-flex items-center gap-[0.65rem] border-b border-[#a92d4b] pb-2 text-[0.85rem] text-[#211b1b]"
           >
-            {" "}
-            <button>View More</button>
+            Explore the gallery{" "}
+            <i
+              className="hgi-stroke hgi-arrow-up-right-01 inline-block text-xl leading-none"
+              aria-hidden="true"
+            />
           </a>
         </div>
-
-        {/* Lightbox Modal */}
-        {selectedImg && (
-          <div
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm"
-            onClick={() => setSelectedImg(null)}
-          >
-            <button className="absolute top-6 right-6 text-white text-4xl">
-              &times;
-            </button>
-            <div className="max-w-4xl max-h-[90vh] flex flex-col items-center">
+        <div className="grid grid-cols-4 auto-rows-[220px] gap-3 max-[760px]:grid-cols-2 max-[760px]:auto-rows-[180px] max-[480px]:auto-rows-[145px] max-[480px]:gap-[7px]">
+          {galleryImages.map((item, index) => (
+            <button
+              type="button"
+              key={item.image}
+              className={`group relative min-w-0 cursor-pointer overflow-hidden border-0 bg-[#e8e1dc] p-0 text-left ${
+                index === 0 || index === 5 ? "row-span-2" : ""
+              } ${index === 3 ? "col-span-2" : ""}`}
+              onClick={() => setSelected(item)}
+              aria-label={`View ${item.description}`}
+            >
               <img
-                src={selectedImg.image}
-                alt="Full view"
-                className="max-w-full max-h-[80vh] rounded-lg shadow-2xl"
+                src={item.image}
+                alt={item.description}
+                loading="lazy"
+                className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
               />
-              <p className="text-white mt-4 text-xl font-serif italic">
-                {selectedImg.description}
-              </p>
-            </div>
-          </div>
-        )}
-      </section>
-    </body>
+              <span className="absolute inset-x-0 bottom-0 bg-[linear-gradient(transparent,#171212b8)] px-4 pb-[0.85rem] pt-8 text-[0.8rem] text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+                {item.description}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+      {selected && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-4 bg-[#171414f2] p-12 text-white"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.description}
+          onClick={() => setSelected(null)}
+        >
+          <button
+            type="button"
+            className="absolute right-6 top-6 grid h-11 w-11 cursor-pointer place-items-center border border-[#ffffff55] bg-transparent text-white"
+            onClick={() => setSelected(null)}
+            aria-label="Close"
+          >
+            <i
+              className="hgi-stroke hgi-cancel-01 inline-block text-xl leading-none"
+              aria-hidden="true"
+            />
+          </button>
+          <img
+            src={selected.image}
+            alt={selected.description}
+            className="max-h-[78vh] max-w-[min(90vw,1100px)] object-contain"
+            onClick={(event) => event.stopPropagation()}
+          />
+          <p className="m-0 text-[0.9rem]">{selected.description}</p>
+        </div>
+      )}
+    </section>
   );
 }
-
-export default MiniGallery;

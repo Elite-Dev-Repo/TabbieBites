@@ -2,7 +2,9 @@ import React from "react";
 
 const Error = () => {
   return (
-    <div className="page-section flex items-center justify-center">Error</div>
+    <div className="flex min-h-screen w-full items-center justify-center overflow-x-hidden">
+      Error
+    </div>
   );
 };
 
